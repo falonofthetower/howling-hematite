@@ -19,22 +19,18 @@ gem 'puma'
 gem 'sentry-raven'
 gem 'scrypt'
 
-group :development do
-  gem 'guard-rspec'
-  gem 'guard-spork'
-  gem 'guard-zeus'
-end
-
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
+  gem 'shoulda-matchers', require: false
   gem 'rspec-rails', '2.99'
   gem 'capybara'
+  gem 'guard-rspec', require: false
+  gem 'spring-commands-rspec'
 end
 
 group :test do
   gem 'database_cleaner'
-  gem 'shoulda-matchers'
   gem 'fabrication'
   gem 'faker'
 end

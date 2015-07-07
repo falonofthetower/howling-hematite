@@ -1,0 +1,7 @@
+= bootstrap_form_for(@giver) do |f|
+  %header
+    %h1 Your info
+  %fieldset
+    = f.text_field :full_name, label: "Full Name"
+    = f.text_field :message, label: "Public name on the donation"
+    = f.submit "Sign Up", class: "btn btn-default"
