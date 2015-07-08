@@ -7,7 +7,7 @@ class GiversController < ApplicationController
     @giver = Giver.new(giver_params)
     if @giver.save
       flash[:success] = "Thank you for your support!"
-      redirect_to home_path
+      redirect_to root_path
     else
       render :new
       flash.now[:danger] = "Please correct the errors!"
