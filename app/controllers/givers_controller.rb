@@ -15,6 +15,6 @@ class GiversController < ApplicationController
   end
 
   def giver_params
-    params.require(:giver).permit(:full_name, :message)
+    params.require(:giver).permit(:full_name, :message, :email)
   end
 end
