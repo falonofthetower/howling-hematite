@@ -1,0 +1,21 @@
+machine:
+  ruby:
+    version: 2.1.5
+deployment:
+  production:
+    branch: master
+    commands:
+      - heroku maintenance:on --app howling-hematite
+      - heroku pg:backups capture --app howling-hematite
+      - git fetch origin --unshallow
+      - git push git@heroku.com:howling-hematite.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app howling-hematite
+      - heroku maintenance:off --app howling-hematite
+  staging:
+    branch: staging
+    commands:
+      - heroku maintenance:on --app howling-hematite
+      - git fetch origin --unshallow
+      - git push git@heroku.com:howling-hematite-staging.git $CIRCLE_SHA1:refs/heads/master
+      - heroku run rake db:migrate --app howling-hematite-staging
+      - heroku maintenance:off --app howling-hematite-staging
