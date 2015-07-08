@@ -15,7 +15,7 @@ describe GiversController do
       end
 
       it "redirects to the home page" do
-        expect(response).to redirect_to home_path
+        expect(response).to redirect_to root_path
       end
 
       it "saves the donor" do
