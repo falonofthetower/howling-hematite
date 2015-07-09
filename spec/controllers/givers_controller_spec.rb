@@ -25,6 +25,10 @@ describe GiversController do
       it "sets the flash message" do
         expect(flash[:success]).to be_present
       end
+
+      it "sets the giver in the session" do
+        expect(session[:giver_id]).to eq(Giver.first.id)
+      end
     end
 
     context "with invalid info" do

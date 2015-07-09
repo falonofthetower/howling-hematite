@@ -6,6 +6,7 @@ class GiversController < ApplicationController
   def create
     @giver = Giver.new(giver_params)
     if @giver.save
+      session[:giver_id] = @giver.id
       flash[:success] = "Thank you for your support!"
       redirect_to root_path
     else

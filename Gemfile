@@ -16,7 +16,7 @@ gem 'bootstrap_form'
 gem 'figaro'
 gem 'puma'
 gem 'sentry-raven'
-gem 'scrypt'
+gem 'bcrypt'
 
 group :development, :test do
   gem 'pry'
