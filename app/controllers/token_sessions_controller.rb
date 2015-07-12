@@ -1,4 +1,5 @@
 class TokenSessionsController < ApplicationController
+
   def create
     @giver = Giver.find_by(token: params[:token])
     if @giver
