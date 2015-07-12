@@ -1,0 +1,14 @@
+%section
+  .row
+    .col-sm-10.col-bg-offset-1
+      = form_tag access_accounts_path do
+        %header
+          %h1 Access your info?
+          %p We will send you an email with a link that you can use to access your info or add to your donation
+        .form-group
+          .row
+            .col-sm-4
+              = label_tag :email, "Email Address"
+              = text_field_tag :email, nil, class: 'form-control', type: 'email'
+        .form-group.action
+          %input(type="submit" value="Send Email" class="btn btn-default")

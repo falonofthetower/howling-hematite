@@ -26,6 +26,7 @@ group :development, :test do
   gem 'capybara'
   gem 'guard-rspec', require: false
   gem 'spring-commands-rspec'
+  gem 'letter_opener_web'
 end
 
 group :test do
