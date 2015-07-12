@@ -1,0 +1,5 @@
+!!!
+%html
+  %body
+    %p Thank you for your donation, #{@giver.full_name}
+    %p= link_to "Access Dontations", token_sessions_url(@giver.token)

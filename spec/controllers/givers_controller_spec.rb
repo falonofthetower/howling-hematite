@@ -11,11 +11,11 @@ describe GiversController do
   describe "POST create" do
     context "with valid info" do
       before do
-        post :create, giver: { full_name: "Smeagol", message: "preciousssssss" }
-      end
-
-      it "redirects to the home page" do
-        expect(response).to redirect_to root_path
+        post :create, giver: {
+          full_name: "Smeagol",
+          message: "preciousssssss",
+          email: "smeaogl@goblin_town.com"
+        }
       end
 
       it "saves the donor" do
@@ -24,6 +24,10 @@ describe GiversController do
 
       it "sets the flash message" do
         expect(flash[:success]).to be_present
+      end
+
+      it "sets the giver in the session" do
+        expect(session[:giver_id]).to eq(Giver.first.id)
       end
     end
 
