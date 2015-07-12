@@ -17,7 +17,9 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :letter_opener_web
 
-  config.action_mailer.default_url_options = { host: "http://ruby-on-rails-111540.nitrousapp.com:3000" }
+  config.action_mailer.default_url_options = {
+    host: "http://ruby-on-rails-111540.nitrousapp.com:3000"
+  }
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

@@ -1,4 +1,4 @@
-require 'spec_helper'
+require "spec_helper"
 
 describe TokenSessionsController do
   describe "POST create" do
