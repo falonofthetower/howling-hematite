@@ -8,8 +8,8 @@ class GiversController < ApplicationController
     @giver = Giver.new(giver_params)
     if @giver.valid?
       result = BraintreeWrapper::Transaction.sale(
-        :amount => params[:giver][:amount],
-        :payment_method_nonce => params[:payment_method_nonce],
+        amount: params[:giver][:amount],
+        payment_method_nonce: params[:payment_method_nonce],
       )
       if result.success?
         @giver.save
@@ -37,6 +37,7 @@ class GiversController < ApplicationController
   end
 
   private
+
   def generate_client_token
     Braintree::ClientToken.generate
   end
