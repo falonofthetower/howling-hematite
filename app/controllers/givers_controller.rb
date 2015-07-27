@@ -10,9 +10,6 @@ class GiversController < ApplicationController
       result = BraintreeWrapper::Transaction.sale(
         :amount => params[:giver][:amount],
         :payment_method_nonce => params[:payment_method_nonce],
-        options: {
-          submit_for_settlement: true
-        }
       )
       if result.success?
         @giver.save
@@ -21,10 +18,12 @@ class GiversController < ApplicationController
         redirect_to giver_path(@giver.id)
       else
         flash.now[:danger] = result.message
+        gon.client_token = generate_client_token
         render :new
       end
     else
       flash.now[:danger] = "Please correct the errors!"
+      gon.client_token = generate_client_token
       render :new
     end
   end

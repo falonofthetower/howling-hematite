@@ -35,6 +35,10 @@ describe GiversController do
       it "sets the giver in the session" do
         expect(session[:giver_id]).to eq(Giver.first.id)
       end
+
+      it "sets the giver's amount at the value donated" do
+        expect(Giver.last.amount).to eq("100.00")
+      end
     end
 
     context "with invalid info" do

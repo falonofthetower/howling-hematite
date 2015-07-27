@@ -27,7 +27,7 @@ class BraintreeWrapper
     def message
       messages = []
       result.errors.each { |error| messages << error.message }
-      messages
+      "There was a problem processing your card #{messages.join(" ")}"
     end
   end
 end

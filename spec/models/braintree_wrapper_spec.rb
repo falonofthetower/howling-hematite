@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe BraintreeWrapper do
-  describe BraintreeWrapper::Transaction, :vcr do
+describe BraintreeWrapper, :vcr do
+  describe BraintreeWrapper::Transaction do
     describe ".sale" do
       it "makes a successful sale" do
         result = BraintreeWrapper::Transaction.sale(
