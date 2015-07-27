@@ -1,0 +1,59 @@
+[1m[1;34mActiveSupport::Configurable#methods[0m[0m: config
+[1m[1;34mAbstractController::Base#methods[0m[0m: action_methods  action_name  action_name=  available_action?  controller_path  response_body
+[1m[1;34mActionController::Metal#methods[0m[0m: controller_name  env  env=  headers=  middleware_stack  middleware_stack=  middleware_stack?  performed?  request  request=  response  response=  session  to_a
+[1m[1;34mActionView::ViewPaths#methods[0m[0m: _prefixes  append_view_path  details_for_lookup  formats  formats=  locale  locale=  lookup_context  prepend_view_path  template_exists?  view_paths
+[1m[1;34mAbstractController::Rendering#methods[0m[0m: _normalize_render  view_assigns
+[1m[1;34mAbstractController::Translation#methods[0m[0m: l  localize  t  translate
+[1m[1;34mActionController::ModelNaming#methods[0m[0m: convert_to_model  model_name_from_record_or_class
+[1m[1;34mActionDispatch::Routing::PolymorphicRoutes#methods[0m[0m: edit_polymorphic_path  edit_polymorphic_url  new_polymorphic_path  new_polymorphic_url  polymorphic_path  polymorphic_url
+[1m[1;34mActionDispatch::Routing::UrlFor#methods[0m[0m: url_for
+[1m[1;34mActionController::UrlFor#methods[0m[0m: url_options
+[1m[1;34mActiveSupport::Benchmarkable#methods[0m[0m: benchmark
+[1m[1;34mActionController::RackDelegation#methods[0m[0m: content_type  content_type=  dispatch  headers  location  location=  reset_session  response_body=  status  status=
+[1m[1;34mActionView::Rendering#methods[0m[0m: process  rendered_format  view_context  view_context_class  view_context_class=  view_renderer
+[1m[1;34mActionView::Layouts#methods[0m[0m: _layout_conditions  action_has_layout=  action_has_layout?
+[1m[1;34mActionController::Rendering#methods[0m[0m: render_to_string
+[1m[1;34mActionController::Renderers#methods[0m[0m: _handle_render_options  _render_option_js  _render_option_json  _render_option_xml  render_to_body
+[1m[1;34mActionController::Head#methods[0m[0m: head
+[1m[1;34mActionController::ConditionalGet#methods[0m[0m: expires_in  expires_now  fresh_when  stale?
+[1m[1;34mActiveSupport::Callbacks#methods[0m[0m: run_callbacks
+[1m[1;34mActionController::Caching::ConfigMethods#methods[0m[0m: cache_store  cache_store=
+[1m[1;34mActionController::Caching::Fragments#methods[0m[0m: expire_fragment  fragment_cache_key  fragment_exist?  instrument_fragment_cache  read_fragment  write_fragment
+[1m[1;34mActionController::Caching#methods[0m[0m: view_cache_dependencies
+[1m[1;34mActionController::MimeResponds#methods[0m[0m: respond_to  respond_with
+[1m[1;34mActionController::ImplicitRender#methods[0m[0m: default_render  method_for_action  send_action
+[1m[1;34mActiveSupport::Rescuable#methods[0m[0m: handler_for_rescue
+[1m[1;34mActionController::StrongParameters#methods[0m[0m: params  params=
+[1m[1;34mActionController::ForceSSL#methods[0m[0m: force_ssl_redirect
+[1m[1;34mActionController::HttpAuthentication::Basic::ControllerMethods#methods[0m[0m: authenticate_or_request_with_http_basic  authenticate_with_http_basic  request_http_basic_authentication
+[1m[1;34mActionController::HttpAuthentication::Digest::ControllerMethods#methods[0m[0m: authenticate_or_request_with_http_digest  authenticate_with_http_digest  request_http_digest_authentication
+[1m[1;34mActionController::HttpAuthentication::Token::ControllerMethods#methods[0m[0m: authenticate_or_request_with_http_token  authenticate_with_http_token  request_http_token_authentication
+[1m[1;34mActionController::Rescue#methods[0m[0m: rescue_with_handler  show_detailed_exceptions?
+[1m[1;34mActionController::Instrumentation#methods[0m[0m: redirect_to  render  send_data  send_file  view_runtime  view_runtime=
+[1m[1;34mGon::ControllerHelpers#methods[0m[0m: gon
+[1m[1;34mActionDispatch::Routing::RouteSet::MountedHelpers#methods[0m[0m: _main_app  main_app
+[1m[1;34mActiveRecord::Railties::ControllerRuntime#methods[0m[0m: db_runtime  db_runtime=
+[1m[1;34mRaven::Rails::ControllerMethods#methods[0m[0m: capture_exception  capture_message
+[1m[1;34mTurbolinks::Redirection#methods[0m[0m: redirect_via_turbolinks_to
+[1m[1;34mTurbolinks::XHRHeaders#methods[0m[0m: _compute_redirect_to_location
+[1m[1;34mActionController::Base#methods[0m[0m: 
+  _helper_methods             _renderers=                alert                         default_url_options           helpers_path?         mimes_for_respond_to               rescue_handlers=
+  _helper_methods=            _renderers?                allow_forgery_protection      default_url_options=          hidden_actions        mimes_for_respond_to=              rescue_handlers?
+  _helper_methods?            _view_cache_dependencies   allow_forgery_protection=     default_url_options?          hidden_actions=       mimes_for_respond_to?              responder       
+  _helpers                    _view_cache_dependencies=  asset_host                    etaggers                      hidden_actions?       notice                             responder=      
+  _helpers=                   _view_cache_dependencies?  asset_host=                   etaggers=                     include_all_helpers   perform_caching                    responder?      
+  _helpers?                   _view_paths                assets_dir                    etaggers?                     include_all_helpers=  perform_caching=                   stylesheets_dir 
+  _process_action_callbacks   _view_paths=               assets_dir=                   flash                         include_all_helpers?  relative_url_root                  stylesheets_dir=
+  _process_action_callbacks=  _view_paths?               default_asset_host_protocol   forgery_protection_strategy   javascripts_dir       relative_url_root=               
+  _process_action_callbacks?  _wrapper_options           default_asset_host_protocol=  forgery_protection_strategy=  javascripts_dir=      request_forgery_protection_token 
+  _protected_ivars            _wrapper_options=          default_static_extension      helpers_path                  logger                request_forgery_protection_token=
+  _renderers                  _wrapper_options?          default_static_extension=     helpers_path=                 logger=               rescue_handlers                  
+[1m[1;34m#<Module:0x00000005b87ba8>#methods[0m[0m: 
+  access_account_path  access_accounts_path  giver_path  givers_path  new_access_account_path  new_giver_path  root_path  token_sessions_path
+  access_account_url   access_accounts_url   giver_url   givers_url   new_access_account_url   new_giver_url   root_url   token_sessions_url 
+[1m[1;34m#<Module:0x00000005c9e140>#methods[0m[0m: _routes
+[1m[1;34mGiversController#methods[0m[0m: create  giver_params  new  show
+[1m[1;34minstance variables[0m[0m: 
+  [0;34m@_action_has_layout[0m  [0;34m@_config[0m  [0;34m@_headers[0m         [0;34m@_params[0m    [0;34m@_request[0m   [0;34m@_response_body[0m  [0;34m@_status[0m  [0;34m@marked_for_same_origin_verification[0m
+  [0;34m@_action_name[0m        [0;34m@_env[0m     [0;34m@_lookup_context[0m  [0;34m@_prefixes[0m  [0;34m@_response[0m  [0;34m@_routes[0m         [0;34m@giver[0m  
+[1m[1;34mlocals[0m[0m: _  __  _dir_  _ex_  _file_  _in_  _out_  _pry_  [0;33mresult[0m

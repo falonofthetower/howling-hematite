@@ -1,0 +1,16 @@
+<form id="checkout" method="post" action="/checkout">
+  <div id="payment-form"></div>
+  <input type="submit" value="Pay $10">
+</form>
+
+<script src="https://js.braintreegateway.com/v2/braintree.js"></script>
+
+<script>
+  function braintree_setup() {
+    braintree.setup(gon.client_token, "custom", {id: "payment-form"});
+  }
+
+  braintree.setup(
+    gon.client_token, "dropin", { container: "payment-form" }
+  );
+</script>
