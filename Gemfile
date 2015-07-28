@@ -17,6 +17,8 @@ gem 'figaro'
 gem 'puma'
 gem 'sentry-raven'
 gem 'bcrypt'
+gem 'braintree'
+gem 'gon'
 
 group :development, :test do
   gem 'pry'
@@ -33,6 +35,11 @@ group :test do
   gem 'database_cleaner'
   gem 'fabrication'
   gem 'faker'
+  gem 'vcr'
+  gem 'selenium-webdriver'
+  gem 'poltergeist'
+  gem 'webmock'
+  gem 'launchy'
 end
 
 group :production do
