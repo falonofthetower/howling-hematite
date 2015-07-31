@@ -6,6 +6,23 @@ class GiversController < ApplicationController
 
   def create
     @giver = Giver.new(giver_params)
+    result = GiverDonate.new(@giver).donate(
+      params[:giver][:amount],
+      params[:payment_method_nonce]
+    )
+    if result.success?
+      session[:giver_id] = result.giver.id
+      flash[:success] = "Thank you for your support!"
+      redirect_to giver_path(result.giver.id)
+    else
+      flash.now[:danger] = result.error_message
+      gon.client_token = generate_client_token
+      render :new
+    end
+  end
+
+  def create_old
+    @giver = Giver.new(giver_params)
     if @giver.valid?
       result = BraintreeWrapper::Transaction.sale(
         amount: params[:giver][:amount],

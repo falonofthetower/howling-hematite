@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722213739) do
+ActiveRecord::Schema.define(version: 20150728182437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "donations", force: true do |t|
+    t.integer "giver_id"
+    t.string  "transaction_id"
+    t.string  "amount"
+  end
 
   create_table "givers", force: true do |t|
     t.string   "full_name"
