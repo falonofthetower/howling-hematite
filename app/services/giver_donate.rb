@@ -14,6 +14,7 @@ class GiverDonate
       )
       if philanthropist.success?
         @giver.save
+        Donation.create(amount: amount, giver: @giver, transaction_id: philanthropist.id)
         @status = :success
       else
         @status = :failure

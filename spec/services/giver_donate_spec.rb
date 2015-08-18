@@ -8,17 +8,22 @@ describe GiverDonate do
           :philanthropist,
           success?: true,
           payment_method_nonce: "nonce",
-          amount: "10.00"
+          amount: "10.00",
+          id: 35
         )
       end
 
       before do
         BraintreeWrapper::Transaction.should_receive(:sale).and_return(philanthropist)
+        GiverDonate.new(Fabricate.build(:giver)).donate("10", "payment_method_nonce")
       end
 
       it "creates giver" do
-        GiverDonate.new(Fabricate.build(:giver)).donate("payment_method_nonce", "10")
         expect(Giver.count).to eq(1)
+      end
+
+      it "creates a related donation" do
+        expect(Giver.first.donations.first.amount).to eq("10")
       end
     end
 

@@ -9,6 +9,7 @@ describe BraintreeWrapper, :vcr do
           payment_method_nonce: "fake-valid-nonce"
         )
         expect(result.success?).to be_truthy
+        expect(result.id).to_not be_nil
       end
 
       it "delivers errors on unsuccessful sale" do

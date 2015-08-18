@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     redirect_to sign_in_path
   end
 
-  def require_user
+  def require_giver
     access_denied unless logged_in?
   end
 end
