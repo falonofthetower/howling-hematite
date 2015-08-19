@@ -1,0 +1,91 @@
+html {
+	background:#888;
+	padding-left:2em;
+	padding-right:2em;
+}
+
+body {
+	position:relative;
+	border: 3px #222 solid;
+	background-color:#BBB;
+	
+	margin-top:3em;
+	margin-left:auto;
+	margin-right:auto;
+
+	min-width:450px;
+	max-width:60em;
+	
+	padding-left:0em;
+	padding-right:0em;
+	padding-top:2em;
+	padding-bottom:0em;
+}
+
+header.logo {
+	position:absolute;
+	alignment-baseline:central;
+	vertical-align:central;
+	text-align:center;
+	top:-1.5em;
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	
+	border: 1px #222 solid;
+	background:#FFF;
+	display:block;
+}
+
+main {
+	border: 1px #222 dotted;
+	margin-left:auto;
+	margin-right:auto;
+	padding-left:2em;
+	padding-right:2em;
+}
+
+main article {
+	border: 1px #222 solid;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:1em;
+	margin-bottom:1em;
+	padding:1.5em;
+	max-width:30em;
+	min-width:250px;
+	display:block;
+	background-color:#EEE;
+}
+
+main article.donations {
+	background-color:#AAA;
+	border: 1px #DF4444 solid;
+	background-color:#DADADA;
+	display:block;
+	z-index:10;
+	position:relative;
+	padding:1em;
+}
+
+footer {
+	border: 1px #222 solid;
+}
+
+@media only screen and (min-width: 45em) {
+	main {
+		border: 1px #222 dotted;
+		margin-left:auto;
+		margin-right:auto;
+		padding-left:16em;
+		padding-right:2em;
+	}
+
+	main article.donations {
+		background-color:#AFA;
+		position:absolute;
+		left:-1.9em;
+		min-width:250px;
+	}
+}
