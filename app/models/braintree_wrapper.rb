@@ -24,6 +24,10 @@ class BraintreeWrapper
       result.success?
     end
 
+    def id
+      result.transaction.id
+    end
+
     def message
       messages = []
       result.errors.each { |error| messages << error.message }

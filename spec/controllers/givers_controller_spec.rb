@@ -10,22 +10,12 @@ describe GiversController do
 
   describe "POST create" do
     context "with valid info" do
+      let(:giver) { Fabricate(:giver) }
+
       before do
-        transaction = double('transaction')
-        transaction.stub(:success?).and_return(true)
-        BraintreeWrapper::Transaction.stub(:sale).and_return(transaction)
-
-        post :create, giver: {
-          full_name: "Smeagol",
-          message: "preciousssssss",
-          email: "smeaogl@goblin_town.com",
-          amount: "100.00",
-          payment_method_nonce: "This works?"
-        }
-      end
-
-      it "saves the donor" do
-        expect(Giver.count).to eq 1
+        result = double(:donate_result, success?: true, giver: giver)
+        GiverDonate.any_instance.should_receive(:donate).and_return(result)
+        post :create, giver: Fabricate.attributes_for(:giver)
       end
 
       it "sets the flash message" do
@@ -33,16 +23,18 @@ describe GiversController do
       end
 
       it "sets the giver in the session" do
-        expect(session[:giver_id]).to eq(Giver.first.id)
+        expect(session[:giver_id]).to eq(giver.id)
       end
 
-      it "sets the giver's amount at the value donated" do
-        expect(Giver.last.amount).to eq("100.00")
+      it "redirects to the giver's path" do
+        expect(response).to redirect_to(giver_path(giver.id))
       end
     end
 
     context "with invalid info" do
       before do
+        result = double(:donate_result, success?: false, error_message: "this is failure")
+        GiverDonate.any_instance.should_receive(:donate).and_return(result)
         post :create, giver: { message: "preciousssssss" }
       end
 
@@ -56,6 +48,10 @@ describe GiversController do
 
       it "sets the flash error message" do
         expect(flash[:danger]).to be_present
+      end
+
+      it "does not put the giver in the session" do
+        expect(session[:giver_id]).to be_nil
       end
     end
   end
