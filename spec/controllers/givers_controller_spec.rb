@@ -22,12 +22,8 @@ describe GiversController do
         expect(flash[:success]).to be_present
       end
 
-      it "sets the giver in the session" do
-        expect(session[:giver_id]).to eq(giver.id)
-      end
-
       it "redirects to the giver's path" do
-        expect(response).to redirect_to(giver_path(giver.id))
+        expect(response).to redirect_to(new_giver_path)
       end
     end
 
@@ -48,10 +44,6 @@ describe GiversController do
 
       it "sets the flash error message" do
         expect(flash[:danger]).to be_present
-      end
-
-      it "does not put the giver in the session" do
-        expect(session[:giver_id]).to be_nil
       end
     end
   end
