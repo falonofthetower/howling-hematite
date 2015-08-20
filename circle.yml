@@ -14,7 +14,7 @@ deployment:
   staging:
     branch: staging
     commands:
-      - heroku maintenance:on --app howling-hematite
+      - heroku maintenance:on --app howling-hematite-staging
         #- git fetch origin --unshallow
       - git push git@heroku.com:howling-hematite-staging.git $CIRCLE_SHA1:refs/heads/master
       - heroku run rake db:migrate --app howling-hematite-staging
