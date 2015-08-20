@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150731192812) do
+ActiveRecord::Schema.define(version: 20150819184958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admins", force: true do |t|
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "donations", force: true do |t|
     t.integer "giver_id"
@@ -28,10 +35,7 @@ ActiveRecord::Schema.define(version: 20150731192812) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email"
-    t.string   "password_digest"
-    t.string   "token"
     t.string   "amount"
-    t.boolean  "admin"
   end
 
 end
