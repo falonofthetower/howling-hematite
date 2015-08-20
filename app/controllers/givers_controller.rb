@@ -11,9 +11,8 @@ class GiversController < ApplicationController
       params[:payment_method_nonce]
     )
     if result.success?
-      session[:giver_id] = result.giver.id
-      flash[:success] = "Thank you for your support!"
-      redirect_to giver_path(result.giver.id)
+      flash[:success] = "#{@giver.full_name}, thank you for your support!"
+      redirect_to new_giver_path
     else
       flash.now[:danger] = result.error_message
       gon.client_token = generate_client_token
@@ -21,36 +20,8 @@ class GiversController < ApplicationController
     end
   end
 
-  def create_old
-    @giver = Giver.new(giver_params)
-    if @giver.valid?
-      result = BraintreeWrapper::Transaction.sale(
-        amount: params[:giver][:amount],
-        payment_method_nonce: params[:payment_method_nonce],
-      )
-      if result.success?
-        @giver.save
-        session[:giver_id] = @giver.id
-        flash[:success] = "Thank you for your support!"
-        redirect_to giver_path(@giver.id)
-      else
-        flash.now[:danger] = result.message
-        gon.client_token = generate_client_token
-        render :new
-      end
-    else
-      flash.now[:danger] = "Please correct the errors!"
-      gon.client_token = generate_client_token
-      render :new
-    end
-  end
-
   def giver_params
     params.require(:giver).permit(:full_name, :message, :email, :amount)
-  end
-
-  def show
-    @giver = Giver.find(params[:id])
   end
 
   private

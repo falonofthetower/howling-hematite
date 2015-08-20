@@ -9,7 +9,7 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_valid_card "100"
     click_button "Donate"
-    expect(page).to have_content("Thank you")
+    expect(page).to have_content("thank you")
   end
 
   scenario "with valid amount and invalid giver data" do
