@@ -3,6 +3,7 @@ class AppMailer < ActionMailer::Base
 
   def receipt(giver, donation)
     @giver = giver
+    @donation = donation
     mail to: giver.email, subject: "Receipt for donation"
   end
 end
