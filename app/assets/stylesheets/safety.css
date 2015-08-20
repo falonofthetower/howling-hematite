@@ -1,3 +1,5 @@
+/* Major Formatting and Layout */
+
 html {
 	background:#888;
 	padding-left:2em;
@@ -8,14 +10,14 @@ body {
 	position:relative;
 	border: 3px #222 solid;
 	background-color:#BBB;
-	
+
 	margin-top:3em;
 	margin-left:auto;
 	margin-right:auto;
 
 	min-width:450px;
 	max-width:60em;
-	
+
 	padding-left:0em;
 	padding-right:0em;
 	padding-top:2em;
@@ -32,7 +34,7 @@ header.logo {
 	right:0;
 	margin-left:auto;
 	margin-right:auto;
-	
+
 	border: 1px #222 solid;
 	background:#FFF;
 	display:block;
@@ -42,9 +44,15 @@ main {
 	border: 1px #222 dotted;
 	margin-left:auto;
 	margin-right:auto;
-	padding-left:2em;
-	padding-right:2em;
+	padding-left:1em;
+	padding-right:1em;
 }
+
+footer {
+	border: 1px #222 solid;
+}
+
+/* Donation Form and Sidebar */
 
 main article {
 	border: 1px #222 solid;
@@ -60,30 +68,47 @@ main article {
 }
 
 main article.donations {
-	background-color:#AAA;
 	border: 1px #DF4444 solid;
-	background-color:#DADADA;
+	/*background-color:#DADADA;*/
 	display:block;
 	z-index:10;
 	position:relative;
+ 	padding:0em;
+}
+
+main article.donations {
+  min-width: 20em;
+  background-color: none;
+  background:none;
+}
+
+main article.donations section {
+  background:#AAA;
+  border: 2px #333 solid;
+  border-radius: 8px;
+  margin-bottom: 1em;
 	padding:1em;
 }
 
-footer {
-	border: 1px #222 solid;
+main article.donations label {
+  display: block;
+  font-size: smaller;
+  font-weight: bolder;
+  color: #656565;
 }
 
-@media only screen and (min-width: 45em) {
+
+@media only screen and (min-width: 45em) and (min-height: 40em) {
 	main {
 		border: 1px #222 dotted;
 		margin-left:auto;
 		margin-right:auto;
-		padding-left:16em;
-		padding-right:2em;
+		padding-left:18em;
+		padding-right:1em;
 	}
 
 	main article.donations {
-		background-color:#AFA;
+		/*background-color:#AFA;*/
 		position:absolute;
 		left:-1.9em;
 		min-width:250px;
