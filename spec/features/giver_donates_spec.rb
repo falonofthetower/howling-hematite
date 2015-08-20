@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "giver donates to cause", :js, :vcr do
+feature "giver donates to cause", :js do
   background do
     visit new_giver_path
   end

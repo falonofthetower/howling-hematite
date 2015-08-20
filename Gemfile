@@ -19,6 +19,7 @@ gem 'sentry-raven'
 gem 'bcrypt'
 gem 'braintree'
 gem 'gon'
+gem 'sidekiq'
 
 group :development, :test do
   gem 'pry'

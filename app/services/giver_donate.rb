@@ -16,6 +16,7 @@ class GiverDonate
         @giver.save
         Donation.create(amount: amount, giver: @giver, transaction_id: philanthropist.id)
         @status = :success
+        AppMailer.delay.receipt(@giver)
       else
         @status = :failure
         @error_message = philanthropist.message
