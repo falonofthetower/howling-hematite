@@ -1,5 +1,5 @@
 %header.logo
-  %p logo
+  =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png"
 %main{:role => "main"}
   %article.donations
     %section.donate-form
@@ -11,7 +11,7 @@
           = f.text_field :message, label: "Public name on the donation"
           = f.text_field :amount, label: "Amount of donation"
           .form-group
-          = label_tag 'Cardholder name'
+            = label_tag 'Cardholder name'
           = text_field_tag 'Cardholder name', nil, name: nil, placeholder: 'Cardholder name', data: {'braintree-name' => 'cardholder_name'}, class: 'form-control'
         .form-group
           = label_tag 'Card number'

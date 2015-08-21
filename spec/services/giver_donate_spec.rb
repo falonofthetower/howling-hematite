@@ -15,7 +15,7 @@ describe GiverDonate do
 
       before do
         BraintreeWrapper::Transaction.should_receive(:sale).and_return(philanthropist)
-        GiverDonate.new(Fabricate.build(:giver)).donate("10", "payment_method_nonce")
+        GiverDonate.new(Fabricate.build(:giver, full_name: "Dark Warrior")).donate("10", "payment_method_nonce")
       end
 
       it "creates giver" do
@@ -24,6 +24,12 @@ describe GiverDonate do
 
       it "creates a related donation" do
         expect(Giver.first.donations.first.amount).to eq("10")
+      end
+
+      it "sends out email with givers name" do
+        expect(
+          ActionMailer::Base.deliveries.last.body
+        ).to include("Dark Warrior")
       end
     end
 

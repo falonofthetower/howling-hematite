@@ -1,8 +1,9 @@
 class AppMailer < ActionMailer::Base
   default from: "info@howling-hematite.herokuapp.com/"
 
-  def send_account_token(giver)
+  def receipt(giver, donation)
     @giver = giver
-    mail to: giver.email, subject: "Access your donations records"
+    @donation = donation
+    mail to: giver.email, subject: "Receipt for donation"
   end
 end
