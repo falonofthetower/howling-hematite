@@ -6,6 +6,9 @@ require 'rspec/rails'
 require 'shoulda-matchers'
 require "vcr"
 require "capybara/poltergeist"
+require "sidekiq/testing"
+
+Sidekiq::Testing.inline!
 
 Capybara.server_port = 52662
 Capybara.javascript_driver = :poltergeist
