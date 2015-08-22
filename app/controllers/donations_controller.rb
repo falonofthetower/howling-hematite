@@ -1,5 +1,6 @@
-class DonationsController < AdminController
+class DonationsController < ApplicationController
   def index
-    @donations = Donation.all
+    @total = Donation.total
+    @giver_count = Giver.unique_count
   end
 end
