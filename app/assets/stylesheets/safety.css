@@ -177,6 +177,17 @@ main article.donations input.btn:active {
   box-shadow: inset 3px 3px 9px -2px black;
 }
 
+/* Chart and stats styles */
+
+.donation-amount {
+  color: green;
+  font-size: xx-large;
+  font-weight: bolder;
+  text-align: center;
+  margin:0;
+}
+
+/* Alternate styles that break the donation box out to the side when the window is big enough. */
 
 @media only screen and (min-width: 45em) and (min-height: 40em) {
 	main {
