@@ -23,7 +23,7 @@ describe GiverDonate do
       end
 
       it "creates a related donation" do
-        expect(Giver.first.donations.first.amount).to eq("10")
+        expect(Giver.first.donations.first.amount.to_i).to eq(10)
       end
 
       it "sends out email with givers name" do
