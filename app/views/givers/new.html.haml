@@ -4,27 +4,7 @@
   %article.donations
     %section.donate-form
       %h2 Please Help: Donate Here
-      = bootstrap_form_for(@giver, html: {id: "payment-form"}) do |f|
-        %fieldset
-          = f.text_field :full_name, label: "Full Name"
-          = f.email_field :email, label: "Email Address"
-          = f.text_field :message, label: "Public name on the donation"
-          = f.text_field :amount, label: "Amount of donation"
-          .form-group
-            = label_tag 'Cardholder name'
-          = text_field_tag 'Cardholder name', nil, name: nil, placeholder: 'Cardholder name', data: {'braintree-name' => 'cardholder_name'}, class: 'form-control'
-        .form-group
-          = label_tag 'Card number'
-          = text_field_tag 'Card number', nil, name: nil, placeholder: 'Card number', data: {'braintree-name' => 'number'}, class: 'form-control'
-        .form-group
-          = label_tag 'Cvv number'
-          = text_field_tag 'Cvv number', nil, name: nil, placeholder: 'CVV', data: {'braintree-name' => 'cvv'}, class: 'form-control'
-        .form-group
-          = label_tag 'Month'
-          = text_field_tag 'Month', nil, name: nil, placeholder: 'Month in MM format', data: {'braintree-name' => 'expiration_month'}, class: 'form-control'
-          = label_tag 'Year'
-          = text_field_tag 'Year', nil, name: nil, placeholder: 'Year in YY format', data: {'braintree-name' => 'expiration_year'}, class: 'form-control'
-          = f.submit "Donate", class: "btn btn-default"
+      = render "form"
     %section.chart
       %p sidebar
   %article
