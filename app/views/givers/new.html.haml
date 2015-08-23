@@ -1,12 +1,15 @@
 %header.logo
   =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png"
-%main{:role => "main"}
+%main.main{:role => "main"}
+  :javascript
+    scrollHandler();
   %article.donations
     %section.donate-form
       %h2 Please Help: Donate Here
       = render "form"
-    %section.chart
-      %p sidebar
+    %section.donate-chart
+      %h2 Donated So Far
+      %p.donation-amount VALUE
   %article
     %section
       %h2 Example Content
@@ -23,3 +26,5 @@
       %p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus tempor nunc ut condimentum. Vivamus vel lobortis velit. Donec sollicitudin efficitur lorem quis pretium. Aliquam et quam eget ipsum mollis suscipit suscipit vitae libero. Aliquam scelerisque ipsum magna, id ultrices tellus vestibulum ac. Cras commodo libero eget tincidunt pulvinar. Aliquam erat volutpat. Donec facilisis quam facilisis, sagittis eros vel, dapibus ex. Vivamus posuere mi a velit ultrices cursus ac eu nunc. Donec a varius risus.
 %footer
   %p footer
+:javascript
+  displayDonations();
