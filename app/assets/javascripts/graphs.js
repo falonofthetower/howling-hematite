@@ -1,21 +1,25 @@
 function toLocaleStringSupportsLocales() {
   var number = 0;
   try {
-    number.toLocaleString('i');
+    number.toLocaleString("i");
   } catch (e) {
-    return e.name === 'RangeError';
+    return e.name === "RangeError";
   }
   return false;
 }
 
 function toLocaleStringSupportsOptions() {
-  return !!(typeof Intl == 'object' && Intl && typeof Intl.NumberFormat == 'function');
+  return !!(typeof Intl == "object" && Intl && typeof Intl.NumberFormat == "function");
 }
 
 function toCurrencyString(amount) {
   var currency = amount;
   if(toLocaleStringSupportsLocales() && toLocaleStringSupportsOptions()) {
-    currency = Number(amount).toLocaleString("en-US", {style: 'currency', currency: 'USD', minimumFractionDigits: 2, maximumFractionDigits: 2});
+    currency = Number(amount).toLocaleString("en-US",
+                                             {style: "currency",
+                                              currency: "USD",
+                                              minimumFractionDigits: 2,
+                                              maximumFractionDigits: 2});
   }
   return currency;
 }
@@ -23,7 +27,11 @@ function toCurrencyString(amount) {
 /* TODO: Update this to pull the data dynamically, not just on load. */
 function displayDonations() {
   d3.xml("donations.xml", "application/xml", function(error, data) {
-    var data_total = Number(data.documentElement.getElementsByTagName("total").item(0).textContent) + 89578942515.2;
+    var data_total = Number(data.documentElement
+                                .getElementsByTagName("total")
+                                .item(0)
+                                .textContent)
+                   + 89578942515.2; // add this to total for testing
 
     d3.selectAll(".donation-amount")
     .text("")
@@ -36,4 +44,4 @@ function displayDonations() {
       return function(t) { this.textContent = toCurrencyString(i(t))};
     });
   });
-}
+};
