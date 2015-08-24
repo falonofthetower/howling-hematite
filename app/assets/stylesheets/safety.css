@@ -208,7 +208,7 @@ div.alert-danger a.close {
   position:relative;
 }
 
-main article.donations input.form-control.error {
+main article.donations input.form-control.error, main article.donations div.has-error input.form-control {
   border-color: red;
   background-color: pink;
 }
