@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150819184958) do
+ActiveRecord::Schema.define(version: 20150822172432) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20150819184958) do
   create_table "donations", force: true do |t|
     t.integer "giver_id"
     t.string  "transaction_id"
-    t.string  "amount"
+    t.decimal "amount",         precision: 50, scale: 2
   end
 
   create_table "givers", force: true do |t|
