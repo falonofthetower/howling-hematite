@@ -2,8 +2,8 @@
 
 html {
 	background:#643571;
-	padding-left:2em;
-	padding-right:2em;
+	padding-left:0em;
+	padding-right:0em;
 }
 
 body {
@@ -32,7 +32,7 @@ header.logo {
 	alignment-baseline:central;
 	vertical-align:central;
 	text-align:center;
-	top:-3.8em;
+	top:-4em;
 	left:0;
 	right:0;
 	margin-left:auto;
@@ -94,7 +94,7 @@ main article.donations {
 	z-index:10;
 	position:static; /* must be static to disable scrolling on small screens */
  	padding:0em;
-  top:auto; /* used for moving it up and down the page when scrolling */
+  top:55px; /* used for moving it up and down the page when scrolling */
 }
 
 main article.donations {
@@ -177,9 +177,75 @@ main article.donations input.btn:active {
   box-shadow: inset 3px 3px 9px -2px black;
 }
 
+/* Validation and warnings */
 
-@media only screen and (min-width: 45em) and (min-height: 40em) {
-	main {
+main article.donations .error {
+  color: maroon;
+}
+
+main article.donations .warning {
+  color: red;
+}
+
+main article.donations span.help-block {
+  color: red;
+  font-weight: bolder;
+  display:block;
+}
+
+div.alert-danger {
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  border: 1px black solid;
+  background-color: red;
+  margin:auto;
+
+}
+div.alert-danger a.close {
+  text-align: right;
+  right: 0;
+  position:relative;
+}
+
+main article.donations input.form-control.error {
+  border-color: red;
+  background-color: pink;
+}
+
+/* Chart and stats styles */
+
+section.donate-chart {
+  text-align: center;
+  font-size: x-large;
+}
+
+section.donate-chart p {
+  font-size: xx-large;
+  margin-top:0;
+}
+
+
+.donation-amount, .donation-donors {
+  color: green;
+  font-size: larger;
+  font-weight: bolder;
+  text-align: center;
+  margin:0;
+}
+
+/* Alternate styles that break the donation box out to the side when the window is big enough. */
+
+@media only screen and (min-width: 750px) {
+  html {
+		padding-left:2em;
+	  padding-right:2em;
+  }
+}
+
+@media only screen and (min-width: 45em) and (min-height: 40em) and (min-width: 800px) {
+
+	main.support-scrolling {
 		/*border: 1px #222 dotted;*/
 		margin-left:auto;
 		margin-right:auto;
@@ -187,7 +253,7 @@ main article.donations input.btn:active {
 		padding-right:1em;
 	}
 
-	main article.donations {
+	main.support-scrolling article.donations {
 		/*background-color:#AFA;*/
 		position:absolute;
 		left:-1.9em;
