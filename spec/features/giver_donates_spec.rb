@@ -7,8 +7,10 @@ feature "giver donates to cause", :js do
 
   scenario "with valid amount and valid giver info" do
     fill_in_valid_giver
-    fill_in_valid_card "100"
+    fill_in_valid_card rand(100).to_s
     click_button "Donate"
+
+    sleep(5)
     expect(page).to have_content("thank you")
   end
 
