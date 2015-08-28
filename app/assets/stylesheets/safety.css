@@ -80,7 +80,7 @@ main article {
 	margin-bottom:1em;
 	padding:1.5em;
 	max-width:30em;
-	min-width:250px;
+	min-width:350px;
 	display:block;
 	background-color:#E8DAF9;
 
@@ -88,11 +88,27 @@ main article {
   box-shadow: inset 0 0 9em -1em #C9A9F3, 2px 2px 15px -2px grey;
 }
 
+main article.video {
+  padding: 0;
+  background-color: transparent;
+  min-width: 200px;
+  text-align: center;
+  width:100%;
+  position: relative;
+}
+
+main article.video iframe {
+  display: inline-block;
+}
+
+/* Donation Sidebar */
+
 main article.donations {
 	border: none;
-	display:block;
-	z-index:10;
-	position:static; /* must be static to disable scrolling on small screens */
+	display: block;
+	z-index: 10;
+  max-width: 320px;
+	position: static; /* must be static to disable scrolling on small screens */
  	padding:0em;
   top:55px; /* used for moving it up and down the page when scrolling */
 }
@@ -234,6 +250,15 @@ section.donate-chart p {
   margin:0;
 }
 
+/* Pullouts and asides */
+
+main article.sidebar {
+	max-width:30em;
+	min-width:250px;
+	display:block;
+  position: static;
+}
+
 /* Alternate styles that break the donation box out to the side when the window is big enough. */
 
 @media only screen and (min-width: 750px) {
@@ -259,4 +284,30 @@ section.donate-chart p {
 		left:-1.9em;
 		min-width:250px;
 	}
+}
+
+@media only screen and (min-width: 1200px) {
+  main.support-scrolling {
+		padding-right:260px;
+	}
+
+ main article.sidebar {
+	max-width:250px;
+	min-width:250px;
+	display: inline-block;
+  position: absolute;
+  right: -4em;
+}
+}
+
+/* Print Styles */
+
+@media print {
+  html {
+	  background: transparent;
+  }
+
+  body {
+	  background-color: transparent;
+  }  
 }
