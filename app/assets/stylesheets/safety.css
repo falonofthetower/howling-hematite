@@ -259,6 +259,25 @@ main article.sidebar {
   position: static;
 }
 
+/* Return to top */
+div.return {
+  display: hidden;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.return p {
+  margin: 0;
+}
+
+
 /* Alternate styles that break the donation box out to the side when the window is big enough. */
 
 @media only screen and (min-width: 750px) {
@@ -268,7 +287,7 @@ main article.sidebar {
   }
 }
 
-@media only screen and (min-width: 45em) and (min-height: 40em) and (min-width: 800px) {
+@media only screen and (min-width: 45em) and (min-height: 45em) and (min-width: 800px) {
 
 	main.support-scrolling {
 		/*border: 1px #222 dotted;*/
@@ -284,6 +303,28 @@ main article.sidebar {
 		left:-1.9em;
 		min-width:250px;
 	}
+}
+
+@media only screen and (min-width: 990px) {
+div.return {
+  display: block;
+  position: fixed;
+  right: 0.5em;
+  bottom: 1em;
+  background-color:#883388;
+  color: orange;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 0.1em 0.4em 0.1em 0.4em;
+  vertical-align: center;
+  text-align: center;
+  border: 2px black solid;
+  border-radius: 1em;
+  box-shadow: 0px 0px 5px purple;
+  cursor: pointer;
+}
+div.return:hover { background-color: lavender; }
+div.return:active { background-color: white; color:purple; }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -309,5 +350,5 @@ main article.sidebar {
 
   body {
 	  background-color: transparent;
-  }  
+  }
 }

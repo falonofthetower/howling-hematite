@@ -14,16 +14,19 @@ function checkScrollingSupport() {
 function scrollHandler(event) {
   checkScrollingSupport();
   var h = $("main").height();
-  var sTop = $(window).scrollTop();
+  var sTop = $(window).scrollTop() - 95;
+  console.log(sTop);
   var dBox = $(".donations");
-  var boundedScroll = Math.max(55, Math.min(sTop, h - dBox.outerHeight(true)));
+  var boundedScroll = Math.max(55, Math.min(sTop, (h - dBox.outerHeight(true))));
+  console.log((h - dBox.outerHeight(true)));
+  console.log(boundedScroll);
 
   if(0 > (h - dBox.outerHeight(true))) {
     return;
   }
 
   dBox.animate({top: boundedScroll},
-               50,
+               150,
                function () {});
 };
 
@@ -80,6 +83,9 @@ function validateField(event) {
 $(window).load(function() {
   $("input.form-control").blur(function(event) {
     validateField(event);
+  });
+  $("div.return").click( function() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   });
 });
 
