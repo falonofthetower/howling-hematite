@@ -89,7 +89,8 @@ main article {
 }
 
 main article.video {
-  padding: 0;
+  max-width:33em;
+	padding: 0px;
   background-color: transparent;
   min-width: 200px;
   text-align: center;
@@ -261,7 +262,8 @@ main article.sidebar {
 
 /* Return to top */
 div.return {
-  display: hidden;
+  visibility: hidden;
+  display: none;
 }
 
 .noselect {
@@ -277,6 +279,42 @@ div.return p {
   margin: 0;
 }
 
+/* Slideshows */
+
+main article.images {
+  max-width:33em;
+	min-width:350px;
+  padding: 0px;
+  background:transparent;
+  border: none;
+  min-height:300px;
+  text-align:center;
+}
+
+section.slideshow {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-height:300px;
+  background:transparent;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.slideshow div.slideshow {
+  cursor: move;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-width:100px;
+  height:100%;
+  /*min-height:250px;*/
+ /* width: 128px;*/
+}
 
 /* Alternate styles that break the donation box out to the side when the window is big enough. */
 
@@ -322,6 +360,7 @@ div.return {
   border-radius: 1em;
   box-shadow: 0px 0px 5px purple;
   cursor: pointer;
+  visibility: visible;
 }
 div.return:hover { background-color: lavender; }
 div.return:active { background-color: white; color:purple; }

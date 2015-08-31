@@ -1,3 +1,5 @@
+/* Visual and Responsive Scripting */
+
 function toLocaleStringSupportsLocales() {
   var number = 0;
   try {
