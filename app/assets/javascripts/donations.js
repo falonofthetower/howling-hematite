@@ -30,7 +30,7 @@ function scrollHandler(event) {
   }
 
   dBox.animate({top: boundedScroll},
-               150,
+               40,
                function () {});
 };
 
