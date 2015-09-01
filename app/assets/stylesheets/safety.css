@@ -1,7 +1,8 @@
 /* Major Formatting and Layout */
 
 html {
-	background:#643571;
+  font-family: 'Signika', Verdana, sans-serif;
+	background:#262a76;
 	padding-left:0em;
 	padding-right:0em;
 }
@@ -70,10 +71,30 @@ footer {
   box-shadow: inset 0 0 45px -20px grey;
 }
 
+/* Fonts and Text */
+
+p {
+	font-family: Georgia, Utopia, Palatino, ‘Palatino Linotype’, serif;
+	font-size: 16pt;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 22pt;
+  margin-left:0.5em;
+}
+blockquote {
+}
+pre {
+}
+
+h1, h2, h3, h4, h5 {
+
+}
+
 /* Articles, Donation Form and Sidebar */
 
 main article {
-	border: 1px #C9A9F3 solid;
+	border: 1px #91b6f9 solid;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:1em;
@@ -82,10 +103,10 @@ main article {
 	max-width:30em;
 	min-width:350px;
 	display:block;
-	background-color:#E8DAF9;
+	background-color:#daeef9;
 
   border-radius: 6px;
-  box-shadow: inset 0 0 9em -1em #C9A9F3, 2px 2px 15px -2px grey;
+  box-shadow: inset 0 0 9em -1em #91b6f9, 2px 2px 15px -2px grey;
 }
 
 main article.video {
@@ -129,6 +150,10 @@ main article.donations section {
 	padding:1em;
   box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
 }
+main article.donations section p {
+  font-family: 'Signika', Verdana, sans-serif;
+  /*font-family: Corbel, ‘Lucida Grande’, ‘Lucida Sans Unicode’, ‘DejaVu Sans’, ‘Bitstream Vera Sans’, ‘Liberation Sans’, Verdana, ‘Verdana Ref’, sans-serif*/
+}
 
 main article.donations section h2 {
   margin:0;
@@ -161,7 +186,7 @@ main article.donations input.form-control {
 }
 
 main article.donations input.btn {
-  background-color: #E2BAE2;
+  background-color: #94c7f3;
   display:block;
   margin: 1em;
   margin-left: auto;
@@ -172,10 +197,10 @@ main article.donations input.btn {
   padding-right: 3em;
   border: 3px outset;
   border-radius: 1.5em;
-  border-bottom-color: #F8F;
-  border-right-color: #F8F;
-  border-left-color: #FBF;
-  border-top-color: #FBF;
+  border-bottom-color: #88F;
+  border-right-color: #88F;
+  border-left-color: #8BF;
+  border-top-color: #8BF;
   font-weight: bolder;
   box-shadow: 3px 3px 12px -2px black;
 }
@@ -190,7 +215,7 @@ main article.donations input.btn:active {
   color: #fff;
   text-shadow: 0 0 18px 3px white;
   border: 3px inset;
-  border-color: #FBF;
+  border-color: #BBF;
   box-shadow: inset 3px 3px 9px -2px black;
 }
 
@@ -238,14 +263,17 @@ section.donate-chart {
 }
 
 section.donate-chart p {
-  font-size: xx-large;
+  font-size: x-large;
+  line-height: 1.4em;
   margin-top:0;
+  margin-bottom:0;
+  margin-left:auto;
 }
 
 
-.donation-amount, .donation-donors {
+section.donate-chart p.donation-amount, section.donate-chart .donation-donors {
   color: green;
-  font-size: larger;
+  font-size: xx-large;
   font-weight: bolder;
   text-align: center;
   margin:0;
@@ -349,7 +377,7 @@ div.return {
   position: fixed;
   right: 0.5em;
   bottom: 1em;
-  background-color:#883388;
+  background-color:#333388;
   color: orange;
   font-size: xx-large;
   font-weight: bold;
