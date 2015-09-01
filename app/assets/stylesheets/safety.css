@@ -1,7 +1,8 @@
 /* Major Formatting and Layout */
 
 html {
-	background:#643571;
+  font-family: 'Signika', Verdana, sans-serif;
+	background:#262a76;
 	padding-left:0em;
 	padding-right:0em;
 }
@@ -70,29 +71,66 @@ footer {
   box-shadow: inset 0 0 45px -20px grey;
 }
 
+/* Fonts and Text */
+
+p {
+	font-family: Georgia, Utopia, Palatino, ‘Palatino Linotype’, serif;
+	font-size: 16pt;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 400;
+	line-height: 22pt;
+  margin-left:0.5em;
+}
+blockquote {
+}
+pre {
+}
+
+h1, h2, h3, h4, h5 {
+
+}
+
 /* Articles, Donation Form and Sidebar */
 
 main article {
-	border: 1px #C9A9F3 solid;
+	border: 1px #91b6f9 solid;
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:1em;
 	margin-bottom:1em;
 	padding:1.5em;
 	max-width:30em;
-	min-width:250px;
+	min-width:350px;
 	display:block;
-	background-color:#E8DAF9;
+	background-color:#daeef9;
 
   border-radius: 6px;
-  box-shadow: inset 0 0 9em -1em #C9A9F3, 2px 2px 15px -2px grey;
+  box-shadow: inset 0 0 9em -1em #91b6f9, 2px 2px 15px -2px grey;
 }
+
+main article.video {
+  max-width:33em;
+	padding: 0px;
+  background-color: transparent;
+  min-width: 200px;
+  text-align: center;
+  width:100%;
+  position: relative;
+}
+
+main article.video iframe {
+  display: inline-block;
+}
+
+/* Donation Sidebar */
 
 main article.donations {
 	border: none;
-	display:block;
-	z-index:10;
-	position:static; /* must be static to disable scrolling on small screens */
+	display: block;
+	z-index: 10;
+  max-width: 320px;
+	position: static; /* must be static to disable scrolling on small screens */
  	padding:0em;
   top:55px; /* used for moving it up and down the page when scrolling */
 }
@@ -111,6 +149,10 @@ main article.donations section {
   margin-bottom: 1em;
 	padding:1em;
   box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
+}
+main article.donations section p {
+  font-family: 'Signika', Verdana, sans-serif;
+  /*font-family: Corbel, ‘Lucida Grande’, ‘Lucida Sans Unicode’, ‘DejaVu Sans’, ‘Bitstream Vera Sans’, ‘Liberation Sans’, Verdana, ‘Verdana Ref’, sans-serif*/
 }
 
 main article.donations section h2 {
@@ -144,7 +186,7 @@ main article.donations input.form-control {
 }
 
 main article.donations input.btn {
-  background-color: #E2BAE2;
+  background-color: #94c7f3;
   display:block;
   margin: 1em;
   margin-left: auto;
@@ -155,10 +197,10 @@ main article.donations input.btn {
   padding-right: 3em;
   border: 3px outset;
   border-radius: 1.5em;
-  border-bottom-color: #F8F;
-  border-right-color: #F8F;
-  border-left-color: #FBF;
-  border-top-color: #FBF;
+  border-bottom-color: #88F;
+  border-right-color: #88F;
+  border-left-color: #8BF;
+  border-top-color: #8BF;
   font-weight: bolder;
   box-shadow: 3px 3px 12px -2px black;
 }
@@ -173,7 +215,7 @@ main article.donations input.btn:active {
   color: #fff;
   text-shadow: 0 0 18px 3px white;
   border: 3px inset;
-  border-color: #FBF;
+  border-color: #BBF;
   box-shadow: inset 3px 3px 9px -2px black;
 }
 
@@ -208,7 +250,7 @@ div.alert-danger a.close {
   position:relative;
 }
 
-main article.donations input.form-control.error {
+main article.donations input.form-control.error, main article.donations div.has-error input.form-control {
   border-color: red;
   background-color: pink;
 }
@@ -221,17 +263,85 @@ section.donate-chart {
 }
 
 section.donate-chart p {
-  font-size: xx-large;
+  font-size: x-large;
+  line-height: 1.4em;
   margin-top:0;
+  margin-bottom:0;
+  margin-left:auto;
 }
 
 
-.donation-amount, .donation-donors {
+section.donate-chart p.donation-amount, section.donate-chart .donation-donors {
   color: green;
-  font-size: larger;
+  font-size: xx-large;
   font-weight: bolder;
   text-align: center;
   margin:0;
+}
+
+/* Pullouts and asides */
+
+main article.sidebar {
+	max-width:30em;
+	min-width:250px;
+	display:block;
+  position: static;
+}
+
+/* Return to top */
+div.return {
+  visibility: hidden;
+  display: none;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+div.return p {
+  margin: 0;
+}
+
+/* Slideshows */
+
+main article.images {
+  max-width:33em;
+	min-width:350px;
+  padding: 0px;
+  background:transparent;
+  border: none;
+  min-height:300px;
+  text-align:center;
+}
+
+section.slideshow {
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  min-height:300px;
+  background:transparent;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section.slideshow div.slideshow {
+  cursor: move;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  min-width:100px;
+  height:100%;
+  /*min-height:250px;*/
+ /* width: 128px;*/
 }
 
 /* Alternate styles that break the donation box out to the side when the window is big enough. */
@@ -243,7 +353,7 @@ section.donate-chart p {
   }
 }
 
-@media only screen and (min-width: 45em) and (min-height: 40em) and (min-width: 800px) {
+@media only screen and (min-width: 45em) and (min-height: 45em) and (min-width: 800px) {
 
 	main.support-scrolling {
 		/*border: 1px #222 dotted;*/
@@ -259,4 +369,55 @@ section.donate-chart p {
 		left:-1.9em;
 		min-width:250px;
 	}
+}
+
+@media only screen and (min-width: 990px) {
+div.return {
+  display: block;
+  position: fixed;
+  right: 0.5em;
+  bottom: 1em;
+  background-color:#333388;
+  color: orange;
+  font-size: xx-large;
+  font-weight: bold;
+  padding: 0.1em 0.4em 0.1em 0.4em;
+  vertical-align: center;
+  text-align: center;
+  border: 2px black solid;
+  border-radius: 1em;
+  box-shadow: 0px 0px 5px purple;
+  cursor: pointer;
+  visibility: visible;
+}
+div.return:hover { background-color: lavender; }
+div.return:active { background-color: white; color:purple; }
+}
+
+/*
+@media only screen and (min-width: 1200px) {
+  main.support-scrolling {
+		padding-right:260px;
+	}
+
+ main article.sidebar {
+	max-width:250px;
+	min-width:250px;
+	display: inline-block;
+  position: absolute;
+  right: -4em;
+}
+}
+*/
+
+/* Print Styles */
+
+@media print {
+  html {
+	  background: transparent;
+  }
+
+  body {
+	  background-color: transparent;
+  }
 }
