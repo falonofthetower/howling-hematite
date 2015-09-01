@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://apikey:68c8ee959f5a3733b2f15c62a26a8884-us11@us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"dewitt.mcclure@kemmerking.info","status":"subscribed","merge_fields":{"NAME":"Dark
+        Warrior"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - fc5fa16f-3b52-44d2-86df-bfddedf3efc0
+      Link:
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 01 Sep 2015 00:01:02 GMT
+      Content-Length:
+      - '2137'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"2f96f51dbff85d4be150e2c52b8e3b56","email_address":"dewitt.mcclure@kemmerking.info","unique_email_id":"e8fb501ff1","email_type":"html","status":"subscribed","merge_fields":{"NAME":"Dark
+        Warrior"},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"75.110.111.2","timestamp_opt":"2015-09-01
+        00:01:02","member_rating":2,"last_changed":"2015-09-01 00:01:02","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"e33e9c8ef1","_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56","method":"PATCH","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56","method":"DELETE"},{"rel":"activity","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56/activity","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json"},{"rel":"goals","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56/goals","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json"},{"rel":"notes","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/2f96f51dbff85d4be150e2c52b8e3b56/notes","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json"}]}'
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 00:01:04 GMT
+- request:
+    method: post
+    uri: https://apikey:68c8ee959f5a3733b2f15c62a26a8884-us11@us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"elyse.kertzmann@langoshmclaughlin.net","status":"subscribed","merge_fields":{"NAME":"Dark
+        Warrior"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - 023fddf1-1e49-40f3-92da-a38be56ccdd8
+      Link:
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 01 Sep 2015 00:51:35 GMT
+      Content-Length:
+      - '2144'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"dacc8794ee45f1e17aa208a1daf5d3be","email_address":"elyse.kertzmann@langoshmclaughlin.net","unique_email_id":"8f0b14c12b","email_type":"html","status":"subscribed","merge_fields":{"NAME":"Dark
+        Warrior"},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"75.110.111.2","timestamp_opt":"2015-09-01
+        00:51:34","member_rating":2,"last_changed":"2015-09-01 00:51:34","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"e33e9c8ef1","_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be","method":"PATCH","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be","method":"DELETE"},{"rel":"activity","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be/activity","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json"},{"rel":"goals","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be/goals","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json"},{"rel":"notes","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/dacc8794ee45f1e17aa208a1daf5d3be/notes","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json"}]}'
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 00:51:37 GMT
+- request:
+    method: post
+    uri: https://apikey:68c8ee959f5a3733b2f15c62a26a8884-us11@us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"elyse.kertzmann@langoshmclaughlin.net","status":"subscribed","merge_fields":{"NAME":"Dark
+        Warrior"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/problem+json; charset=utf-8
+      Content-Length:
+      - '235'
+      X-Request-Id:
+      - 36082e9c-dc13-42d1-8894-1cac2a9125cd
+      Link:
+      - <https://us11.api.mailchimp.com/schema/3.0/ProblemDetailDocument.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 01 Sep 2015 00:51:40 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"type":"http://kb.mailchimp.com/api/error-docs/400-invalid-resource","title":"Invalid
+        Resource","status":400,"detail":"elyse.kertzmann@langoshmclaughlin.net is
+        already a list member.  Use PATCH to update existing members.","instance":"36082e9c-dc13-42d1-8894-1cac2a9125cd"}'
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 00:51:42 GMT
+recorded_with: VCR 2.9.3
