@@ -1,5 +1,5 @@
 class GiverDonate
-  attr_reader :error_message, :giver
+  attr_reader :error_message, :giver, :gibbon
 
   def initialize(giver)
     @giver = giver
@@ -16,6 +16,7 @@ class GiverDonate
         @giver.save
         @donation = Donation.create(amount: amount, giver: @giver, transaction_id: philanthropist.id)
         @status = :success
+        MailchimpSubscription.delay.subscribe(@giver)
         AppMailer.delay.receipt(@giver, @donation)
       else
         @status = :failure

@@ -1,3 +1,5 @@
+/* Visual and Responsive Scripting */
+
 function toLocaleStringSupportsLocales() {
   var number = 0;
   try {
@@ -30,13 +32,13 @@ function displayDonations() {
     var data_total = Number(data.documentElement
                                 .getElementsByTagName("total")
                                 .item(0)
-                                .textContent)
-                   + 9578942515.2; // add this to total for testing
+                                .textContent);
+                   
     var donorTotal = Number(data.documentElement
                                 .getElementsByTagName("total_number_of_donors")
                                 .item(0)
-                                .textContent)
-    + 4568;
+                                .textContent);
+    
 
     d3.selectAll(".donation-amount")
       .text("")
