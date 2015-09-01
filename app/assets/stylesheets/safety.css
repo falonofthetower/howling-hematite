@@ -344,7 +344,6 @@ article.retractable {
 
 article.retractable:hover {
   background-color: #262a76;
-  color: #ccc;
 }
 
 article.retractable h1 {
@@ -358,12 +357,6 @@ article.retractable h1:hover {
 article.retractable h1:active {
   color:#444;
   text-shadow: 0px 0px 5px #444;
-}
-
-/* Small Print */
-
-article.smallprint p {
-  font-size: smaller;
 }
 
 /* Slideshows */

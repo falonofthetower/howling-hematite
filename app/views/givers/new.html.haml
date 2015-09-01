@@ -18,7 +18,15 @@
         people
   = render "content"
 %footer
-  %p footer
+  %p
+    %a#reveal-disclaimer{ href: "#disclaimer", title: "Show Disclaimer" }
+      Disclaimer
+    |
+    %a#reveal-privacy{ href: "#privacy-statement", title: "Show Privacy Statement" }
+      Privacy Statement
+    |
+    %a#reveal-terms-of-use{ href: "#terms-of-use", title: "Show Terms of Use" }
+      Terms of Use
 :javascript
   displayDonations();
 %div.return#returntotop
