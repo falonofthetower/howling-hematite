@@ -20,6 +20,8 @@ gem 'bcrypt'
 gem 'braintree'
 gem 'gon'
 gem 'sidekiq'
+gem 'gibbon'
+
 
 group :development, :test do
   gem 'pry'
