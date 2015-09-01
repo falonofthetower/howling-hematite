@@ -90,6 +90,16 @@ pre {
 h1, h2, h3, h4, h5 {
 
 }
+h1, h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+h1 {
+  font-size: 36pt;
+  line-height: 36pt;
+}
 
 /* Articles, Donation Form and Sidebar */
 
@@ -121,6 +131,26 @@ main article.video {
 
 main article.video iframe {
   display: inline-block;
+}
+
+/* Page Headline */
+
+main article.headline {
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  overflow: visible;
+  padding:0;
+  padding-top: 16px;
+}
+
+main article.headline h1 {
+  font-size: 92pt;
+  line-height: 68pt;
+  letter-spacing: -0.055em;
+}
+main article.headline h2 {
+  font-size: 25pt;
 }
 
 /* Donation Sidebar */
