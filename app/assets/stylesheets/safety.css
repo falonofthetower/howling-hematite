@@ -394,6 +394,7 @@ div.return:hover { background-color: lavender; }
 div.return:active { background-color: white; color:purple; }
 }
 
+/*
 @media only screen and (min-width: 1200px) {
   main.support-scrolling {
 		padding-right:260px;
@@ -407,6 +408,7 @@ div.return:active { background-color: white; color:purple; }
   right: -4em;
 }
 }
+*/
 
 /* Print Styles */
 

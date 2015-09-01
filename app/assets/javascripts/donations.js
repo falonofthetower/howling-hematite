@@ -5,14 +5,18 @@ var main_height = $("main").height();
 function checkScrollingSupport() {
   if($(window).width() > 600) {
     $("main").addClass("support-scrolling");
+    return true;
   } else {
     $("main").removeClass("support-scrolling");
+    return false;
   }
 };
 
 // Scroll the donation box so it's always in view
 function scrollHandler(event) {
-  checkScrollingSupport();
+  if(!(checkScrollingSupport())) {
+    return;
+  }
   var h = $("main").height();
   var sTop = $(window).scrollTop() - 95;
   //console.log(sTop);
@@ -107,6 +111,8 @@ function videoSizing() {
 
 /* Slideshows */
 
+
+
 var jssor_slider_test;
 
 function slideshowSizing(slider) {
@@ -121,26 +127,10 @@ function slideshowSizing(slider) {
       //jssorUtils.$SetStyleLeft(slider.$Elmt, articleWidth / 2);
       shows.each(function() {
         //$(this).height(slider.$ScaleHeight());
-        console.log($(this).height());
-
       });
-      console.log("rersize");
     }
     //
   }
-
-  /*
-  shows.width(articleWidth);
-  shows.each(function() {
-    $(this).width(articleWidth);
-  });
-  showsdiv.width(articleWidth);
-  showsdiv.each(function() {
-    $(this).width(articleWidth);
-    console.log(this);
-  });
-  */
-
 }
 
 $(window).load(function(x) {
