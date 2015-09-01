@@ -1,0 +1,191 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://apikey:68c8ee959f5a3733b2f15c62a26a8884-us11@us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members
+    body:
+      encoding: UTF-8
+      string: '{"email_address":"malika@friesen.name","status":"subscribed","merge_fields":{"NAME":"Tremayne
+        Collins"}}'
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Request-Id:
+      - a29b6393-4b56-42bd-baca-1b2882f9c077
+      Link:
+      - <https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json>; rel="describedBy"
+      Vary:
+      - Accept-Encoding
+      Date:
+      - Tue, 01 Sep 2015 00:01:00 GMT
+      Content-Length:
+      - '2130'
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"id":"68959324830dee68b74c72e22fe6f241","email_address":"malika@friesen.name","unique_email_id":"7f4e7d0be1","email_type":"html","status":"subscribed","merge_fields":{"NAME":"Tremayne
+        Collins"},"stats":{"avg_open_rate":0,"avg_click_rate":0},"ip_signup":"","timestamp_signup":"","ip_opt":"75.110.111.2","timestamp_opt":"2015-09-01
+        00:01:00","member_rating":2,"last_changed":"2015-09-01 00:01:00","language":"","vip":false,"email_client":"","location":{"latitude":0,"longitude":0,"gmtoff":0,"dstoff":0,"country_code":"","timezone":""},"list_id":"e33e9c8ef1","_links":[{"rel":"self","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"parent","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Collection.json","schema":"https://us11.api.mailchimp.com/schema/3.0/CollectionLinks/Lists/Members.json"},{"rel":"update","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241","method":"PATCH","schema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Instance.json"},{"rel":"delete","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241","method":"DELETE"},{"rel":"activity","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241/activity","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Activity/Collection.json"},{"rel":"goals","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241/goals","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Goals/Collection.json"},{"rel":"notes","href":"https://us11.api.mailchimp.com/3.0/lists/e33e9c8ef1/members/68959324830dee68b74c72e22fe6f241/notes","method":"GET","targetSchema":"https://us11.api.mailchimp.com/schema/3.0/Lists/Members/Notes/Collection.json"}]}'
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 00:01:02 GMT
+- request:
+    method: post
+    uri: https://xjyvwy24cxfwt98z:2ad81382ad8bb7a00447a46398cea8bb@api.sandbox.braintreegateway.com/merchants/svwhj9sfmh38gwmk/transactions
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <transaction>
+          <amount>10</amount>
+          <payment-method-nonce>payment_method_nonce</payment-method-nonce>
+          <options>
+            <submit-for-settlement type="boolean">true</submit-for-settlement>
+          </options>
+          <type>sale</type>
+        </transaction>
+    headers:
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - application/xml
+      User-Agent:
+      - Braintree Ruby Gem 2.45.0
+      X-Apiversion:
+      - '4'
+      Content-Type:
+      - application/xml
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 01 Sep 2015 00:55:42 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      X-Authentication:
+      - basic_auth
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000; includeSubDomains
+      X-User:
+      - 7dc5y35wdx3s8xss
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 57710fa11ce48b882625c9d6e12e02a3
+      X-Runtime:
+      - '1.352193'
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAI735FUAA5RSu27DMAzc8xWCdkfxkKIFZGXrFzRzIDtsatR6QKTb+u8r
+        P+Q4gVOgG8kjT8ej5OHHNOwLAtbOFjzf7jgDW7lzbS8FP769Zs/8oDZS+zqD
+        EFzIAqB3FkFtGJNDCftwThh1HgquQ9AdFxNEQVvUFcVHxsp6e8ISes1jJYoC
+        9ZLvn/ZSDPES1EShLluCiQ87U7qGK687A5ZOBujDnU/W2QqkmLtvOAwg6guo
+        o/207tuytdmtFKntqlXciJ3S5Iq4230JS6+DNviHSdq41pLKd1H0GCZkUpeN
+        6rJB3YN1V1sTj/P9g7hYB9vS1JS9x2MjEDXQDysKbaRax+bN78hkfwyFuomT
+        Q/jIkqsP/75CNGblb/4CAAD//wMAGNH4VdgCAAA=
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 00:55:44 GMT
+- request:
+    method: post
+    uri: https://xjyvwy24cxfwt98z:2ad81382ad8bb7a00447a46398cea8bb@api.sandbox.braintreegateway.com/merchants/svwhj9sfmh38gwmk/transactions
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <transaction>
+          <amount>10</amount>
+          <payment-method-nonce>payment_method_nonce</payment-method-nonce>
+          <options>
+            <submit-for-settlement type="boolean">true</submit-for-settlement>
+          </options>
+          <type>sale</type>
+        </transaction>
+    headers:
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - application/xml
+      User-Agent:
+      - Braintree Ruby Gem 2.45.0
+      X-Apiversion:
+      - '4'
+      Content-Type:
+      - application/xml
+  response:
+    status:
+      code: 422
+      message: Unprocessable Entity
+    headers:
+      Date:
+      - Tue, 01 Sep 2015 02:08:15 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - close
+      X-Authentication:
+      - basic_auth
+      Strict-Transport-Security:
+      - max-age=31536000
+      - max-age=31536000; includeSubDomains
+      X-User:
+      - 7dc5y35wdx3s8xss
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Cache-Control:
+      - no-cache
+      X-Request-Id:
+      - 49c50089f095ed730b77ef96548ab7ec
+      X-Runtime:
+      - '1.294907'
+      X-Frame-Options:
+      - SAMEORIGIN
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAI8I5VUAA5RSu27DMAzc8xWCdkfxkKIFZGXrFzRzIDtsatR6QKTb+u8r
+        P+Q4gVOgG8kjT8ej5OHHNOwLAtbOFjzf7jgDW7lzbS8FP769Zs/8oDZS+zqD
+        EFzIAqB3FkFtGJNDCftwThh1HgquQ9AdFxNEQVvUFcVHxsp6e8ISes1jJYoC
+        9ZLvn/ZSDPES1EShLluCiQ87U7qGK687A5ZOBujDnU/W2QqkmLtvOAwg6guo
+        o/207tuytdmtFKntqlXciJ3S5Iq4230JS6+DNviHSdq41pLKd1H0GCZkUpeN
+        6rJB3YN1V1sTj/P9g7hYB9vS1JS9x2MjEDXQDysKbaRax+bN78hkfwyFuomT
+        Q/jIkqsP/75CNGblb/4CAAD//wMAGNH4VdgCAAA=
+    http_version: 
+  recorded_at: Tue, 01 Sep 2015 02:08:17 GMT
+recorded_with: VCR 2.9.3

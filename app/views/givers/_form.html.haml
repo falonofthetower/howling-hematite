@@ -18,4 +18,5 @@
     = text_field_tag 'Month', nil, name: nil, placeholder: 'Month in MM format', data: {'braintree-name' => 'expiration_month'}, class: 'form-control'
     = label_tag 'Year'
     = text_field_tag 'Year', nil, name: nil, placeholder: 'Year in YY format', data: {'braintree-name' => 'expiration_year'}, class: 'form-control'
+    = f.check_box :mailing_list, label: "Add me to the mailing list"
     = f.submit "Donate", class: "btn btn-default"

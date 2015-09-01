@@ -5,4 +5,8 @@ class Giver < ActiveRecord::Base
   def self.unique_count
     uniq.pluck(:email).count
   end
+
+  def subscribe?
+    self.mailing_list == true
+  end
 end
