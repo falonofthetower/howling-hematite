@@ -111,6 +111,7 @@ function videoSizing() {
 
 /* Slideshows */
 
+/*
 
 
 var jssor_slider_test;
@@ -186,3 +187,4 @@ $(window).load(function() {
 
   $(window).resize(videoSizing);
 });
+*/
