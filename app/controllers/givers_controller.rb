@@ -1,4 +1,7 @@
 class GiversController < ApplicationController
+  def thanks
+  end
+
   def new
     gon.client_token = generate_client_token
     @giver = Giver.new
@@ -11,8 +14,9 @@ class GiversController < ApplicationController
       params[:payment_method_nonce]
     )
     if result.success?
-      flash[:success] = "#{@giver.full_name}, thank you for your support!"
-      redirect_to new_giver_path
+      flash[:name] = @giver.full_name
+      flash[:email] = @giver.email
+      redirect_to thanks_path
     else
       flash.now[:danger] = result.error_message
       gon.client_token = generate_client_token

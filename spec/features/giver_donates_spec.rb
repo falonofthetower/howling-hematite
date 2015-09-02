@@ -11,7 +11,7 @@ feature "giver donates to cause", :js do
     click_button "Donate"
 
     sleep(5)
-    expect(page).to have_content("thank you")
+    expect(page).to have_content("Thank you")
   end
 
   scenario "with valid amount and invalid giver data" do

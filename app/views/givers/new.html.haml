@@ -1,33 +1,22 @@
-%header.logo
-  =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png"
-%main.main{:role => "main"}
-  :javascript
-    scrollHandler();
-  = render "headline"
-  %article.donations
-    %section.donate-form
-      %h2 Please Help: Donate Here
-      %a(href="#" title="Donation Form")
-      = render "form"
-    %section.donate-chart
-      %h2 Donated So Far
-      %p.donation-amount VALUE
-      %p
-        from
-        %span.donation-donors 000
-        people
-  = render "content"
-%footer
-  %p
-    %a#reveal-disclaimer{ href: "#disclaimer", title: "Show Disclaimer" }
-      Disclaimer
-    |
-    %a#reveal-privacy{ href: "#privacy-statement", title: "Show Privacy Statement" }
-      Privacy Statement
-    |
-    %a#reveal-terms-of-use{ href: "#terms-of-use", title: "Show Terms of Use" }
-      Terms of Use
-:javascript
-  displayDonations();
-%div.return#returntotop
-  %p.no-select ⬆
+%h2 Please Help: Donate Here
+%a(href="#" title="Donation Form")
+  = bootstrap_form_for(@giver, html: {id: "payment-form"}) do |f|
+    = render "shared/messages"
+    %fieldset
+      = f.text_field :full_name, label: "Full Name"
+      = f.email_field :email, label: "Email Address"
+      = f.text_field :message, label: "Message (optional)"
+      = f.text_field :amount, label: "Amount of donation"
+      .form-group
+      = label_tag 'Card number'
+      = text_field_tag 'Card number', nil, name: nil, placeholder: 'Card number', data: {'braintree-name' => 'number'}, class: 'form-control'
+      .form-group
+      = label_tag 'Cvv number'
+      = text_field_tag 'Cvv number', nil, name: nil, placeholder: 'CVV', data: {'braintree-name' => 'cvv'}, class: 'form-control'
+      .form-group
+      = label_tag 'Month'
+      = text_field_tag 'Month', nil, name: nil, placeholder: 'Month in MM format', data: {'braintree-name' => 'expiration_month'}, class: 'form-control'
+      = label_tag 'Year'
+      = text_field_tag 'Year', nil, name: nil, placeholder: 'Year in YY format', data: {'braintree-name' => 'expiration_year'}, class: 'form-control'
+      = f.check_box :mailing_list, label: "Add me to the mailing list"
+      = f.submit "Donate", class: "btn btn-default"
