@@ -1,5 +1,5 @@
 class Giver < ActiveRecord::Base
-  validates :full_name, :message, :email, presence: true
+  validates :full_name, :email, presence: true
   has_many :donations
 
   def self.unique_count
