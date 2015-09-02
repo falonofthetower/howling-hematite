@@ -28,7 +28,7 @@ function toCurrencyString(amount) {
 
 /* TODO: Update this to pull the data dynamically, not just on load. */
 function displayDonations() {
-  d3.xml("donations.xml", "application/xml", function(error, data) {
+  d3.xml("/donations.xml", "application/xml", function(error, data) {
     var data_total = Number(data.documentElement
                                 .getElementsByTagName("total")
                                 .item(0)

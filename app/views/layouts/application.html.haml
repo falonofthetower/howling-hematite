@@ -1,0 +1,43 @@
+!!!
+%html
+  %head
+    %title Donor
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = include_gon(init: true)
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %script{:src => "https://js.braintreegateway.com/v2/braintree.js"}
+    = csrf_meta_tags
+    %meta{:content => "width=device-width", :name => "viewport"}/
+    %link{:href => "https://fonts.googleapis.com/css?family=Signika:400,600", :rel => "stylesheet", :type => "text/css"}/
+  %body
+    %header.logo
+      =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png"
+    %main.main{:role => "main"}
+      :javascript
+        scrollHandler();
+      = render "headline"
+      %article.donations
+        %section.donate-form
+          = yield
+        %section.donate-chart
+          %h2 Donated So Far
+          %p.donation-amount VALUE
+          %p
+            from
+            %span.donation-donors 000
+            people
+      = render "content"
+    %footer
+      %p
+        %a#reveal-disclaimer{ href: "#disclaimer", title: "Show Disclaimer" }
+          Disclaimer
+        |
+        %a#reveal-privacy{ href: "#privacy-statement", title: "Show Privacy Statement" }
+          Privacy Statement
+        |
+        %a#reveal-terms-of-use{ href: "#terms-of-use", title: "Show Terms of Use" }
+          Terms of Use
+    :javascript
+      displayDonations();
+    %div.return#returntotop
+      %p.no-select ⬆
