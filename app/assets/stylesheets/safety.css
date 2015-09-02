@@ -339,7 +339,7 @@ div.return p {
 
 /* Retractable */
 article.retractable {
-
+  cursor: pointer;
 }
 article.retractable.collapsed {
   padding-top:0.25em;
@@ -347,7 +347,7 @@ article.retractable.collapsed {
 }
 
 article.retractable:hover {
-  background-color: #262a76;
+  background-color: transparent;/* #262a76;*/
 }
 
 article.retractable h1 {
