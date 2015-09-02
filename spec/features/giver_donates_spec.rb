@@ -45,16 +45,12 @@ feature "giver donates to cause", :js do
   def fill_in_valid_giver
     giver = Fabricate.build(:giver)
     fill_in "Full Name", with: giver.full_name
-    fill_in "Public name on the donation", with: giver.message
     fill_in "Email Address", with: giver.email
-    fill_in "Cardholder name", with: giver.full_name
   end
 
   def fill_in_invalid_giver
     giver = Fabricate.build(:giver)
     fill_in "Full Name", with: giver.full_name
-    fill_in "Public name on the donation", with: giver.message
-    fill_in "Cardholder name", with: giver.full_name
   end
 
   def fill_in_valid_card(amount)
