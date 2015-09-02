@@ -1,16 +1,16 @@
 function toggleHidden(header) {
-  if(header.data("collapsed") === true) {
+  if(header.hasClass("collapsed")) {
     header.children("section").removeClass("hidden");
     if(header.hasClass("all-hidden")) {
        header.removeClass("hidden");
     }
-    header.data("collapsed", false);
+    header.removeClass("collapsed");
   } else {
     header.children("section").addClass("hidden");
     if(header.hasClass("all-hidden")) {
        header.addClass("hidden");
     }
-    header.data("collapsed", true);
+    header.addClass("collapsed");
   }
 }
 

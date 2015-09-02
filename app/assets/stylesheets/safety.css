@@ -341,6 +341,10 @@ div.return p {
 article.retractable {
 
 }
+article.retractable.collapsed {
+  padding-top:0.25em;
+  padding-bottom:0.25em;
+}
 
 article.retractable:hover {
   background-color: #262a76;
