@@ -22,5 +22,6 @@ $(window).load(function() {
   $("#reveal-terms-of-use").click(function() { toggleHidden($("#terms-of-use")); });
   toggleHidden($("#disclaimer"));
   $("#reveal-disclaimer").click(function() { toggleHidden($("#disclaimer")); });
+  toggleHidden($(".start-hidden"));
 
 });

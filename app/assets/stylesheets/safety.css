@@ -146,10 +146,14 @@ main article.video {
   text-align: center;
   width:100%;
   position: relative;
+  border-radius:0;
+  box-shadow:none;
 }
 
 main article.video iframe {
   display: inline-block;
+  box-shadow: 2px 2px 15px -2px grey;
+  width:100%;
 }
 
 /* Page Headline */
@@ -388,10 +392,19 @@ main article.images {
   max-width:33em;
 	min-width:350px;
   padding: 0px;
-  background:transparent;
+  background-color:transparent;
   border: none;
   min-height:300px;
   text-align:center;
+
+  display:block;
+
+  border-radius: 0;
+  box-shadow: none;
+}
+
+main article.images img {
+  box-shadow: inset 0 0 9em -1em #91b6f9, 2px 2px 15px -2px grey;
 }
 
 section.slideshow {
@@ -495,4 +508,9 @@ div.return:active { background-color: white; color:purple; }
   body {
 	  background-color: transparent;
   }
+  
+main article.donations input.btn {
+  border: 1px solid;
+}
+  
 }
