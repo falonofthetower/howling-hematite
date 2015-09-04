@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Donor
+    %title For Truck Safety
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = include_gon(init: true)
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -41,3 +41,4 @@
       displayDonations();
     %div.return#returntotop
       %p.no-select ⬆
+    %script{:src => "rrssb.min.js"}
