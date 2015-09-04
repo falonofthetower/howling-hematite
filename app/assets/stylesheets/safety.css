@@ -90,7 +90,33 @@ p {
   margin-left:0.5em;
 }
 blockquote {
+  margin-left:1em;
+  margin-right:1em;
+  text-align: right;
+  border-radius: 6px;
+  padding: 1em;
+  background-color: transparent;
+  border: 1px #91b6f9 solid;
+  box-shadow: inset 0px 0px 48px -9px #91b6f9;
 }
+blockquote p{
+  margin-top:0;
+  margin-bottom:0;
+  text-shadow: 1px 1px 6px grey;
+  text-align: left;
+  /*text-indent: 1em hanging;*/
+}
+blockquote cite {
+  font-family: 'Signika', Verdana, sans-serif;
+  text-align: right;
+  right:0px;
+  margin-right:0;
+  margin-left:auto;
+  width:100%;
+  position: relative;
+}
+
+
 pre {
 }
 
