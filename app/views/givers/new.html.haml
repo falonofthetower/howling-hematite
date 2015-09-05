@@ -14,14 +14,12 @@
       = f.text_field :amount, label: "Amount of donation"
       .form-group
       = label_tag 'Card number'
-      = text_field_tag 'Card number', nil, name: nil, placeholder: 'Card number', data: {'braintree-name' => 'number'}, class: 'form-control'
+      #card-number
       .form-group
       = label_tag 'Cvv number'
-      = text_field_tag 'Cvv number', nil, name: nil, placeholder: 'CVV', data: {'braintree-name' => 'cvv'}, class: 'form-control'
+      #cvv
       .form-group
-      = label_tag 'Month'
-      = text_field_tag 'Month', nil, name: nil, placeholder: 'Month in MM format', data: {'braintree-name' => 'expiration_month'}, class: 'form-control'
-      = label_tag 'Year'
-      = text_field_tag 'Year', nil, name: nil, placeholder: 'Year in YY format', data: {'braintree-name' => 'expiration_year'}, class: 'form-control'
+      = label_tag 'Expiration Date'
+      #expiration-date
       = f.check_box :mailing_list, label: "Add me to the mailing list"
       = f.submit "Donate", class: "btn btn-default"
