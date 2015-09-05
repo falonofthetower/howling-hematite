@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title Donor
+    %title For Truck Safety
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = include_gon(init: true)
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -32,8 +32,8 @@
         %a#reveal-disclaimer{ href: "#disclaimer", title: "Show Disclaimer" }
           Disclaimer
         |
-        %a#reveal-privacy{ href: "#privacy-statement", title: "Show Privacy Statement" }
-          Privacy Statement
+        %a#reveal-privacy{ href: "#privacy-statement", title: "Show Privacy Policy" }
+          Privacy Policy
         |
         %a#reveal-terms-of-use{ href: "#terms-of-use", title: "Show Terms of Use" }
           Terms of Use
@@ -41,3 +41,4 @@
       displayDonations();
     %div.return#returntotop
       %p.no-select ⬆
+    %script{:src => "rrssb.min.js"}
