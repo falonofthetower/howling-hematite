@@ -1,5 +1,6 @@
 class Giver < ActiveRecord::Base
-  validates :full_name, :email, presence: true
+  validates :first_name, :last_name, :email, presence: true
+  validates :address, :city, :state, :zip, presence: true
   has_many :donations
 
   def self.unique_count
@@ -8,5 +9,9 @@ class Giver < ActiveRecord::Base
 
   def subscribe?
     self.mailing_list == true
+  end
+
+  def full_name
+    "#{self.first_name} #{self.last_name}"
   end
 end
