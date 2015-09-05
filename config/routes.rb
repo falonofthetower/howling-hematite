@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   root to: "givers#new"
-  resources :givers, only: [:new, :create, :show]
+  resources :givers, only: [:new, :create, :show, :index]
   resources :donations, only: [:index]
   resources :access_accounts, only: [:new, :create, :show]
   get "/token_sessions/:token" => "token_sessions#create", as: :token_sessions
+  get "/thanks" => "givers#thanks", as: :thanks
 
   get "ui(/:action)", controller: "ui"
 end

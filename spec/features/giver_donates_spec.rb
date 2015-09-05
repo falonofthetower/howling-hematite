@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature "giver donates to cause", :js do
+feature "giver donates to cause", :js, :vcr do
   background do
     visit new_giver_path
   end
@@ -11,11 +11,10 @@ feature "giver donates to cause", :js do
     click_button "Donate"
 
     sleep(5)
-    expect(page).to have_content("thank you")
+    expect(page).to have_content("Thank you")
   end
 
   scenario "with valid amount and invalid giver data" do
-    fill_in_invalid_giver
     fill_in_valid_card "100"
     click_button "Donate"
     expect(page).to have_content("Please correct the errors")
@@ -44,13 +43,13 @@ feature "giver donates to cause", :js do
 
   def fill_in_valid_giver
     giver = Fabricate.build(:giver)
-    fill_in "Full Name", with: giver.full_name
+    fill_in "First Name", with: giver.first_name
+    fill_in "Last Name", with: giver.last_name
+    fill_in "Street Address", with: giver.address
+    fill_in "City", with: giver.city
+    fill_in "State", with: giver.state
+    fill_in "Zip", with: giver.zip
     fill_in "Email Address", with: giver.email
-  end
-
-  def fill_in_invalid_giver
-    giver = Fabricate.build(:giver)
-    fill_in "Full Name", with: giver.full_name
   end
 
   def fill_in_valid_card(amount)

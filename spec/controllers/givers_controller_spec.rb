@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GiversController do
+describe GiversController, :vcr do
   describe "GET new" do
     it "sets the giver" do
       get :new
@@ -19,11 +19,11 @@ describe GiversController do
       end
 
       it "sets the flash message" do
-        expect(flash[:success]).to be_present
+        expect(flash[:name]).to be_present
       end
 
       it "redirects to the giver's path" do
-        expect(response).to redirect_to(new_giver_path)
+        expect(response).to redirect_to(thanks_path)
       end
     end
 

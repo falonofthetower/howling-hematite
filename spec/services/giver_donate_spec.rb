@@ -14,7 +14,7 @@ describe GiverDonate, :vcr do
 
       before do
         BraintreeWrapper::Transaction.should_receive(:sale).and_return(philanthropist)
-        GiverDonate.new(Fabricate.build(:giver, full_name: "Dark Warrior")).donate("10", "payment_method_nonce")
+        GiverDonate.new(Fabricate.build(:giver, first_name: "Dark", last_name: "Warrior")).donate("10", "payment_method_nonce")
       end
 
       it "creates giver" do
@@ -68,7 +68,7 @@ describe GiverDonate, :vcr do
         GiverDonate.new(
           Giver.new(
             email: "email@example.com",
-            full_name: "no password"
+            first_name: "no password"
           )).donate("nonce", "10")
       end
 
