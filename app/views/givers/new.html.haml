@@ -3,7 +3,12 @@
   = bootstrap_form_for(@giver, html: {id: "payment-form"}) do |f|
     = render "shared/messages"
     %fieldset
-      = f.text_field :full_name, label: "Full Name"
+      = f.text_field :first_name, label: "First Name"
+      = f.text_field :last_name, label: "Last Name"
+      = f.text_field :address, label: "Street Address"
+      = f.text_field :city, label: "City"
+      = f.text_field :state, label: "State"
+      = f.text_field :zip, label: "Zip"
       = f.email_field :email, label: "Email Address"
       = f.text_field :message, label: "Message (optional)"
       = f.text_field :amount, label: "Amount of donation"

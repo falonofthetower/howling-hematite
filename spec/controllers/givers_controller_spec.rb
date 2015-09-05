@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe GiversController do
+describe GiversController, :vcr do
   describe "GET new" do
     it "sets the giver" do
       get :new
