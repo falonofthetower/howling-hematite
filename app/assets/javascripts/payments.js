@@ -20,10 +20,20 @@ function braintree_setup() {
           "font-family":"'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace"
         },
         ":focus": {
-          "color":"blue"
-        },
-        "card-number": {"background-color":"blue"}
-
+          "color":"blue",
+          "font-weight":"bold"
+        }
+      },
+      onFieldEvent: function(event) {
+        if(event.type === "fieldStateChange") {
+          console.log(event.isValid);
+          if(event.card) {
+            console.log(event.card.type);
+            $("#card-number").removeClass("card-image-visa card-image-diners-club card-image-discover card-image-jcb card-image-maestro card-image-master-card card-image-paypal card-image-american-express card-unionpay");
+            $("#card-number").addClass("card-image-" + event.card.type);
+            console.log(card_image);
+          }
+        }
       }
     }
   });

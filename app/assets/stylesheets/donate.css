@@ -108,9 +108,19 @@ main article.donations div.form-group:nth-of-type(11) { width:49.25%; display: i
   padding-bottom:0em;
 }
 
-#card-number { height: 3em; text-align: center;}
+#card-number { height: 3em; text-align: center; background-size: 48px 32px; background-position: 95% 50%; background-repeat: no-repeat;}
 #cvv-number { height: 2.5em; text-align: center;}
 #expiration-date { height: 2.5em; text-align: center;}
+
+.card-image-visa { background: url(layout/creditcards/visa.svg); }
+.card-image-diners-club { background: url(layout/creditcards/diners.svg); }
+.card-image-discover { background: url(layout/creditcards/discover.svg); }
+.card-image-jcb { background: url(layout/creditcards/jcb.svg); }
+.card-image-maestro { background: url(layout/creditcards/maestro.svg); }
+.card-image-master-card { background: url(layout/creditcards/mastercard.svg); }
+.card-image-paypal { background: url(layout/creditcards/paypal.svg); }
+.card-image-american-express {  }
+.card-image-unionpay {  }
 
 .braintree-hosted-fields-focused { box-shadow: inset 0px 0px 6px blue; }
 .braintree-hosted-fields-valid { box-shadow: inset 0px 0px 16px limegreen; }
