@@ -7,10 +7,13 @@
     = f.text_field :last_name, label: "Last Name", placeholder: "LastName"
     = f.text_field :address, label: "Street Address", placeholder: "123 Example Street", size: 44
     = f.text_field :city, label: "City", placeholder: "City Name", size: 28
-    = f.text_field :state, label: "State", size: 3, maxlength: 3, placeholder: "AA"
+    = f.text_field :state, label: "State", size: 3, placeholder: "AA"
     = f.text_field :zip, label: "Zip/Postal", size: 7, placeholder: "00000"
     = f.email_field :email, label: "Email Address", placeholder: "Your receipt will be sent here", size: 50
     = f.number_field :amount, label: "Amount of donation ($ USD)", value: "25.00", step: 5.0
+    = f.text_area :message, label: "Message (optional)", size: "38x2", placeholder: "If you'd like to include a message with your donation, you can write it here."
+    = f.check_box :mailing_list, label: "Please add me to the mailing list"
+
     .form-group
       = label_tag 'Card number'
       #card-number
@@ -20,7 +23,10 @@
     .form-group
       = label_tag 'Expiration Date'
       #expiration-date
-    = f.check_box :mailing_list, label: "Add me to the mailing list"
-    = f.text_area :message, label: "Message (optional)", size: "38x3", placeholder: "If you'd like to inclde a message with your donation, you can write it here."
-    #paypal-button
+    %div.paypal-group<
+      %p><
+        OR
+        %br><
+        pay with
+      #paypal-button
     = f.submit "Donate", class: "btn btn-default"

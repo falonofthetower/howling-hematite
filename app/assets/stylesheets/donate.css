@@ -87,19 +87,21 @@ main article.donations div.form-group:nth-of-type(5) input { text-align:center; 
 main article.donations div.form-group:nth-of-type(6) { text-align:center; width:25%;}
 main article.donations div.form-group:nth-of-type(6) input { text-align:center; }
 main article.donations div.form-group:nth-of-type(7) { width:100%; }
-main article.donations div.form-group:nth-of-type(13) {
+main article.donations div.form-group:nth-of-type(9) {
   width:100%;
   border:0;
   background-color: transparent;
   box-shadow:none;
 }
-main article.donations div.form-group:nth-of-type(13) textarea {
+main article.donations div.form-group:nth-of-type(9) textarea {
   margin-top: 1em;
 }
-main article.donations div.form-group:nth-of-type(8) { width:100%; }
-main article.donations div.form-group:nth-of-type(9) { width:100%; display: block;}
-main article.donations div.form-group:nth-of-type(10) { width:49.25%; display: inline-block;  border-bottom:1px solid #aaa; left:0px; position: relative;}
-main article.donations div.form-group:nth-of-type(11) { width:49.25%; display: inline-block; border-bottom:1px solid #aaa; right:0px; position: relative;}
+main article.donations div.form-group:nth-of-type(8) { width:100%; border-bottom:1px solid #aaa; }
+
+
+main article.donations div.form-group:nth-of-type(11) { width:100%; display: block;}
+main article.donations div.form-group:nth-of-type(12) { width:49.25%; display: inline-block;  border-bottom:1px solid #aaa; left:0px; position: relative;}
+main article.donations div.form-group:nth-of-type(13) { width:49.25%; display: inline-block; border-bottom:1px solid #aaa; right:0px; position: relative;}
 
 #card-number, #cvv-number, #expiration-date {
   padding-left: 2em;
@@ -131,6 +133,8 @@ main article.donations div.checkbox {
   border: none;
   background-color: transparent;
   box-shadow:none;
+  margin-top: 0.15em;
+  margin-bottom:0.6em;
 }
 main article.donations div.checkbox label {
   font-size: larger;
@@ -199,6 +203,25 @@ article.donations label {
 
 }
 
+.paypal-group {
+  vertical-align:top;
+  height: 44px;
+
+}
+.paypal-group p {
+  display: inline-block;
+  vertical-align: top;
+  margin:0;
+  line-height: 12pt;
+  padding-right:0.4em;
+  padding-top:0.3em;
+
+}
+#paypal-button { display: inline-block; }
+
+main article.donations input.btn {
+  margin-top: 1em;
+}
 
 /*
 main article.donations label {
