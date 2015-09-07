@@ -23,10 +23,10 @@
     .form-group
       = label_tag 'Expiration Date'
       #expiration-date
+    = f.submit "Donate With Credit Card", class: "btn btn-default"
     %div.paypal-group<
       %p><
         OR
         %br><
-        pay with
+        you can use
       #paypal-button
-    = f.submit "Donate", class: "btn btn-default"

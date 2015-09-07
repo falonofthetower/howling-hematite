@@ -206,6 +206,7 @@ article.donations label {
 .paypal-group {
   vertical-align:top;
   height: 44px;
+  margin-top: 0.5em;
 
 }
 .paypal-group p {
@@ -220,7 +221,8 @@ article.donations label {
 #paypal-button { display: inline-block; }
 
 main article.donations input.btn {
-  margin-top: 1em;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 
 /*
