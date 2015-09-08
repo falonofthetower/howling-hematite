@@ -231,6 +231,93 @@ main article.donations input.btn {
   margin-bottom: 0.5em;
 }
 
+main article.donations input.btn.gradient {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a4b357+0,75890c+100;Olive+3D+%233 */
+background: #a4b357; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E0YjM1NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3NTg5MGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a4b357 0%,#75890c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c',GradientType=0 ); /* IE6-8 */
+}
+
+main article.donations input.btn.gradient.disabled {
+  background: #666;
+  color:#999;
+  box-shadow: inset 0px 0px 8px black;
+}
+main article.donations input.btn.gradient.disabled:hover {
+  background: #666;
+  color: red;
+  box-shadow: inset 0px 0px 8px black;
+}
+main article.donations input.btn.gradient.disabled:active {
+  background: #666;
+  color:red;
+  box-shadow: inset 0px 0px 8px red;
+}
+
+
+#braintree-paypal-button {
+  background-color: #2095D8;
+  border-radius: 7px;
+  box-shadow: 4px 4px 7px -2px grey;
+}
+#braintree-paypal-button:hover {
+  box-shadow: 0px 0px 7px 0px black;
+}
+#braintree-paypal-button:active {
+  box-shadow: 0px 0px 7px 02px white;
+}
+
+main article.donations input.btn {
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 5px;
+  box-shadow: 4px 4px 7px -2px grey;
+}
+main article.donations input.btn:focus {
+  outline:0;
+}
+main article.donations input.btn:hover {
+  color: white;
+  box-shadow: inset 4px 4px 3px grey;
+}
+main article.donations input.btn:active {
+  color: white;
+  text-shadow: 0px 0px 12px limegreen;
+  box-shadow: inset 0px 0px 8px white;
+}
+
+
+/*
+
+main article.donations input.btn {
+  background-color: #94c7f3;
+  display:block;
+  margin: 1em;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 0em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border: 3px outset;
+  border-radius: 1.5em;
+  border-bottom-color: #88F;
+  border-right-color: #88F;
+  border-left-color: #8BF;
+  border-top-color: #8BF;
+  font-weight: bolder;
+  box-shadow: 3px 3px 12px -2px black;
+}*/
+
+
 /*
 main article.donations label {
   display: block;
