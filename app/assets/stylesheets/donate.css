@@ -61,7 +61,12 @@ main article.donations section.donate-form fieldset {
   padding: 0;
   margin: 0;
   width:314px;
-  display:table-cell;
+  
+}
+@-moz-document url-prefix() {
+  main article.donations section.donate-form fieldset {
+    display:table-cell;
+  }
 }
 
 main article.donations div.form-group {
