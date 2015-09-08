@@ -1,5 +1,10 @@
 function braintree_setup() {
   braintree.setup(gon.client_token, "custom", {
+    /*onPaymentMethodReceived: function (result) {
+      $("div.overlay").removeClass("invisible");
+      addProgressIndicator();
+      document.forms[0].submit();
+    },*/
     id: "payment-form",
     paypal: {
       container: "paypal-button"
@@ -29,9 +34,7 @@ function braintree_setup() {
       },
       onFieldEvent: function(event) {
         if(event.type === "fieldStateChange") {
-          console.log(event.isValid);
           if(event.card) {
-            console.log(event.card.type);
             $("#card-number").removeClass("card-image-visa card-image-diners-club card-image-discover card-image-jcb card-image-maestro card-image-master-card card-image-paypal card-image-american-express card-unionpay");
             switch (event.card.type) {
               case "visa":
