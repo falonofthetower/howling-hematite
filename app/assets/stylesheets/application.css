@@ -11,10 +11,10 @@
  * file per style scope.
  *
  *= require_self
- *= normalize
- *= main
- *= rrssb
- *= safety
- *= donate
+ *= require normalize
+ *= require main
+ *= require rrssb
+ *= require safety
+ *= require donate
  *= require_tree .
  */
