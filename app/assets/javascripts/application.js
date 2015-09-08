@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require overlay
 //= require d3.min
-//= require jssor.slider.min
+//= require jssor.slider.mini
 //= require rrssb.min
 //= require slideshows
 //= require overlay
