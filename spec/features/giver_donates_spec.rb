@@ -38,8 +38,14 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_invalid_card "100"
     click_button "Donate"
+<<<<<<< HEAD
     require 'pry'; binding.pry
     expect(page).to have_content("Credit card number is invalid.")
+=======
+    within_frame("braintree-hosted-field-number") do
+      expect(page).to have_css("input.number.invalid")
+    end
+>>>>>>> 3ec788d957304ce9f938218b59b958c5acc33729
   end
 
   def fill_in_valid_giver
