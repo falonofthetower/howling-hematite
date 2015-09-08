@@ -1,0 +1,342 @@
+/* Donation Sidebar */
+
+main article.donations {
+	border: none;
+	display: block;
+	z-index: 10;
+  max-width: 320px;
+	position: static; /* must be static to disable scrolling on small screens */
+ 	padding:0em;
+  top:55px; /* used for moving it up and down the page when scrolling */
+}
+
+main article.donations {
+  min-width: 20em;
+  background-color: none;
+  background:none;
+  box-shadow: none;
+  z-index: 2;
+}
+
+main article.donations section {
+  background:#F7F5E7;
+  border: 2px orange solid;
+  border-radius: 8px;
+  margin-bottom: 1em;
+	padding:1em;
+  box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
+}
+main article.donations section p {
+  font-family: 'Signika', Verdana, sans-serif;
+  /*font-family: Corbel, ‘Lucida Grande’, ‘Lucida Sans Unicode’, ‘DejaVu Sans’, ‘Bitstream Vera Sans’, ‘Liberation Sans’, Verdana, ‘Verdana Ref’, sans-serif*/
+}
+
+main article.donations section h2 {
+  margin:0;
+  text-align:center;
+}
+
+main article.donations section.donate-form {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: #fff;
+  /*background:#F7F5E7;*/
+  border: 2px orange solid;
+  border-radius: 8px;
+  margin-left:auto;
+  left:auto;
+  text-align:center;
+
+  margin-bottom: 1em;
+  width:98%;
+  box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
+  z-index:3;
+}
+
+main article.donations section.donate-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+main article.donations div.form-group {
+  display: inline-block;
+  margin:0;
+  padding:0;
+  background-color: #fff;
+  box-shadow: inset 0px 0px 18px #ddd;
+  border:1px solid #aaa;
+  box-sizing: border-box;
+  border-bottom: 0px;
+  text-align: center;
+  display:inline-block;
+  position:relative;
+  white-space: nowrap;
+
+  border-radius: 3px;
+  z-index:4;
+  overflow:visible;
+
+}
+main article.donations div.form-group:hover {
+  background-color:#ffffdd;
+}
+
+main article.donations div.form-group:nth-of-type(1) { width:50%; border-right:0; }
+main article.donations div.form-group:nth-of-type(2) { width:50%; }
+main article.donations div.form-group:nth-of-type(3) { width:100%; }
+main article.donations div.form-group:nth-of-type(4) { width:65%; border-right: 0;}
+main article.donations div.form-group:nth-of-type(5) { text-align:center; width:10%; border-right: 0;}
+main article.donations div.form-group:nth-of-type(5) input { text-align:center; text-transform:uppercase; }
+main article.donations div.form-group:nth-of-type(6) { text-align:center; width:25%;}
+main article.donations div.form-group:nth-of-type(6) input { text-align:center; }
+main article.donations div.form-group:nth-of-type(7) { width:100%; }
+main article.donations div.form-group:nth-of-type(9) {
+  width:100%;
+  border:0;
+  background-color: transparent;
+  box-shadow:none;
+}
+main article.donations div.form-group:nth-of-type(9) textarea {
+  margin-top: 1em;
+}
+main article.donations div.form-group:nth-of-type(8) { width:100%; border-bottom:1px solid #aaa; }
+
+
+main article.donations div.form-group:nth-of-type(11) { width:100%; display: block;}
+main article.donations div.form-group:nth-of-type(12) { width:49.25%; display: inline-block;  border-bottom:1px solid #aaa; left:0px; position: relative;}
+main article.donations div.form-group:nth-of-type(13) { width:49.25%; display: inline-block; border-bottom:1px solid #aaa; right:0px; position: relative;}
+
+#card-number, #cvv-number, #expiration-date {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.25;
+  padding-bottom:0em;
+}
+
+#card-number { height: 3em; text-align: center; background-size: 48px 32px; background-position: 95% 50%; background-repeat: no-repeat;}
+#cvv-number { height: 2.5em; text-align: center;}
+#expiration-date { height: 2.5em; text-align: center;}
+
+.card-image-visa { background: url(layout/creditcards/visa.svg); }
+.card-image-diners-club { background: url(layout/creditcards/diners.svg); }
+.card-image-discover { background: url(layout/creditcards/discover.svg); }
+.card-image-jcb { background: url(layout/creditcards/jcb.svg); }
+.card-image-maestro { background: url(layout/creditcards/maestro.svg); }
+.card-image-master-card { background: url(layout/creditcards/mastercard.svg); }
+.card-image-paypal { background: url(layout/creditcards/paypal.svg); }
+.card-image-american-express {  }
+.card-image-unionpay {  }
+
+.braintree-hosted-fields-focused { box-shadow: inset 0px 0px 6px blue; }
+.braintree-hosted-fields-valid { box-shadow: inset 0px 0px 16px limegreen; }
+.braintree-hosted-fields-invalid { box-shadow: inset 0px 0px 16px tomato; }
+
+main article.donations div.checkbox {
+  width:100%;
+  border: none;
+  background-color: transparent;
+  box-shadow:none;
+  margin-top: 0.15em;
+  margin-bottom:0.6em;
+}
+main article.donations div.checkbox label {
+  font-size: larger;
+  font-weight: normal;
+  color: #656565;
+  text-align:left;
+  padding:0.25em;
+  position:relative;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+main article.donations label {
+  font-size: x-small;
+  font-weight: bolder;
+  color: #656565;
+  text-align:left;
+  position: absolute;
+  left:0.25em;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  z-index:3;
+}
+
+main article.donations input.form-control {
+  font-size: 12pt;
+  padding: 0.0em;
+  padding-top: 0.0em;
+  padding-bottom: 0.0em;
+  margin:0;
+  margin-left:auto;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  left:auto;
+  height: 1.5em;
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  /*border: 1px solid #aaa;
+  border-top: 0;
+  border-bottom: 0;*/
+  width:98%;
+  /*z-index:6;*/
+}
+
+main article.donations input.form-control#giver_amount {
+  text-align: right;
+}
+
+article.donations label {
+  /*border: 1px solid #aaa;
+  border-bottom: 0;
+  background-color: #fff;*/
+
+}
+
+.paypal-group {
+  vertical-align:top;
+  height: 44px;
+  margin-top: 0.5em;
+
+}
+.paypal-group p {
+  display: inline-block;
+  vertical-align: top;
+  margin:0;
+  line-height: 12pt;
+  padding-right:0.4em;
+  padding-top:0.3em;
+
+}
+#paypal-button { display: inline-block; }
+
+main article.donations input.btn {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/*
+main article.donations label {
+  display: block;
+  font-size: smaller;
+  font-weight: bolder;
+  color: #656565;
+}
+
+main article.donations input:focus {
+  border-radius: 6px;
+  border-width: 2px;
+  padding: 4px;
+  border-style: solid;
+  border-color: green;
+  box-shadow: inset 0px 0px 12px orange;
+  outline:none;
+}
+
+main article.donations input.form-control {
+  border-radius: 6px;
+  border-width: 2px;
+  padding: 4px;
+  border-style: solid;
+  border-color: orange;
+}
+
+main article.donations input.btn {
+  background-color: #94c7f3;
+  display:block;
+  margin: 1em;
+  margin-left: auto;
+  margin-right:auto;
+  margin-bottom: 0em;
+  padding: 0.5em;
+  padding-left: 3em;
+  padding-right: 3em;
+  border: 3px outset;
+  border-radius: 1.5em;
+  border-bottom-color: #88F;
+  border-right-color: #88F;
+  border-left-color: #8BF;
+  border-top-color: #8BF;
+  font-weight: bolder;
+  box-shadow: 3px 3px 12px -2px black;
+}
+
+main article.donations input.btn:hover {
+  color: #fff;
+  text-shadow: 0 0 3px 0px white;
+  box-shadow: 3px 3px 15px 0px black;
+}
+
+main article.donations input.btn:active {
+  color: #fff;
+  text-shadow: 0 0 18px 3px white;
+  border: 3px inset;
+  border-color: #BBF;
+  box-shadow: inset 3px 3px 9px -2px black;
+}
+
+*/
+
+/* Validation and warnings */
+
+main article.donations .error {
+  color: maroon;
+}
+
+main article.donations .warning {
+  color: red;
+}
+
+main article.donations span.help-block {
+  color: red;
+  font-weight: bolder;
+  display:block;
+  position: relative;
+  z-index: 10;
+  background-color:pink;
+  padding:0.2em;
+  font-size:x-small;
+}
+
+main article.donations span.help-block:hover {
+  z-index: 20;
+  /*position: absolute;*/
+  background-color:peachpuff;
+}
+
+
+div.alert-danger {
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  border: 1px black solid;
+  background-color: red;
+  margin:auto;
+
+}
+div.alert-danger a.close {
+  text-align: right;
+  right: 0;
+  position:relative;
+}
+
+main article.donations input.form-control.error, main article.donations div.has-error input.form-control {
+  border-color: red;
+  background-color: pink;
+}

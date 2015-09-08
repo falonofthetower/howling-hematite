@@ -38,7 +38,9 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_invalid_card "100"
     click_button "Donate"
-    expect(page).to have_content("Credit card number is invalid.")
+    within_frame("braintree-hosted-field-number") do
+      expect(page).to have_css("input.number.invalid")
+    end
   end
 
   def fill_in_valid_giver
@@ -54,17 +56,27 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_valid_card(amount)
     fill_in "Amount", with: amount
-    fill_in "Card number", with: "4111 1111 1111 1111"
-    fill_in "Cvv number", with: "123"
-    fill_in "Month", with: "10"
-    fill_in "Year", with: "20"
+    within_frame("braintree-hosted-field-number") do
+      fill_in "Credit Card Number", with: "4111 1111 1111 1111"
+    end
+    within_frame("braintree-hosted-field-cvv") do
+      find(".cvv").set "123"
+    end
+    within_frame("braintree-hosted-field-expirationDate") do
+      fill_in "Expiration Date", with: "1220"
+    end
   end
 
   def fill_in_invalid_card(amount)
     fill_in "Amount", with: amount
-    fill_in "Card number", with: "4739 3935 3953 9395"
-    fill_in "Cvv number", with: "123"
-    fill_in "Month", with: "10"
-    fill_in "Year", with: "20"
+    within_frame("braintree-hosted-field-number") do
+      fill_in "Credit Card Number", with: "4739 3935 3953 9395"
+    end
+    within_frame("braintree-hosted-field-cvv") do
+      find(".cvv").set "123"
+    end
+    within_frame("braintree-hosted-field-expirationDate") do
+      fill_in "Expiration Date", with: "1220"
+    end
   end
 end
