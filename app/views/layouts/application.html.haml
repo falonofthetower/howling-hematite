@@ -10,6 +10,7 @@
     %meta{:content => "width=device-width", :name => "viewport"}/
     %link{:href => "https://fonts.googleapis.com/css?family=Signika:400,600", :rel => "stylesheet", :type => "text/css"}/
   %body
+    %div.overlay.invisible
     %header.logo
       =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png"
     %main.main{:role => "main"}
@@ -42,6 +43,7 @@
           AnnaLeahMary.com
     :javascript
       displayDonations();
+      addProgressIndicator();
     %div.return#returntotop
       %p.no-select ⬆
     = javascript_include_tag 'rrssb.min.js'
