@@ -7,9 +7,32 @@ function braintree_setup() {
       document.forms[0].submit();
     },
     */
+    /*onPaymentMethodReceived: function (result) {
+        console.log(result);
+    },*/
     id: "payment-form",
     paypal: {
-      container: "paypal-button"
+      container: "paypal-button",
+      onSuccess: function (nonce, email) {
+        console.log(nonce, email);
+        $("#donation-form-submit-button").prop("value","Donate with Paypal");
+        $("#donation-form-submit-button span").prop("Donate with Paypal");
+        $("#donation-form-submit-button").addClass("validation-paypal");
+        $("#donation-form-submit-button").addClass("no-top-margin");
+        $(".braintree-card").addClass("invisible-fields");
+        $("div.paypal-group p").addClass("invisible-fields");
+        $("div.paypal-group p").text("");
+      },
+      onCancelled: function () {
+        $("#donation-form-submit-button").prop("value","Donate with Credit Card");
+        $("#donation-form-submit-button span").prop("Donate with Credit Card");
+        $("#donation-form-submit-button").removeClass("validation-paypal");
+        $("#donation-form-submit-button").removeClass("no-top-margin");
+        $(".braintree-card").removeClass("invisible-fields");
+        $("div.paypal-group p").removeClass("invisible-fields");
+        $("div.paypal-group p").text("OR pay with");
+      },
+      enableBillingAddress: true
     },
     hostedFields: {
       number: {
