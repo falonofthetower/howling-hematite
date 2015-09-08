@@ -231,7 +231,7 @@ main article.donations input.btn {
   margin-bottom: 0.5em;
 }
 
-main article.donations input.btn.gradient {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a4b357+0,75890c+100;Olive+3D+%233 */
 background: #a4b357; /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -245,17 +245,17 @@ background: linear-gradient(to bottom,  #a4b357 0%,#75890c 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c',GradientType=0 ); /* IE6-8 */
 }
 
-main article.donations input.btn.gradient.disabled {
+main article.donations input.btn {
   background: #666;
   color:#999;
   box-shadow: inset 0px 0px 8px black;
 }
-main article.donations input.btn.gradient.disabled:hover {
+main article.donations input.btn:hover {
   background: #666;
   color: red;
   box-shadow: inset 0px 0px 8px black;
 }
-main article.donations input.btn.gradient.disabled:active {
+main article.donations input.btn:active {
   background: #666;
   color:red;
   box-shadow: inset 0px 0px 8px red;
@@ -279,16 +279,20 @@ main article.donations input.btn {
   padding-left: 2em;
   padding-right: 2em;
   border-radius: 5px;
-  box-shadow: 4px 4px 7px -2px grey;
 }
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date {
+  box-shadow: 4px 4px 7px -2px grey;
+  color: inherit;
+}
+
 main article.donations input.btn:focus {
   outline:0;
 }
-main article.donations input.btn:hover {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date:hover {
   color: white;
   box-shadow: inset 4px 4px 3px grey;
 }
-main article.donations input.btn:active {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date:active {
   color: white;
   text-shadow: 0px 0px 12px limegreen;
   box-shadow: inset 0px 0px 8px white;

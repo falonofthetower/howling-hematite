@@ -1,10 +1,12 @@
 function braintree_setup() {
   braintree.setup(gon.client_token, "custom", {
-    /*onPaymentMethodReceived: function (result) {
+    /*
+    onPaymentMethodReceived: function (result) {
       $("div.overlay").removeClass("invisible");
       addProgressIndicator();
       document.forms[0].submit();
-    },*/
+    },
+    */
     id: "payment-form",
     paypal: {
       container: "paypal-button"
@@ -33,7 +35,36 @@ function braintree_setup() {
         }
       },
       onFieldEvent: function(event) {
+
         if(event.type === "fieldStateChange") {
+          if(event.isValid) {
+            switch(event.target.fieldKey) {
+              case "number":
+                $("#donation-form-submit-button").addClass("validation-braintree-valid-number");
+                break;
+              case "cvv":
+                $("#donation-form-submit-button").addClass("validation-braintree-valid-cvv");
+                break;
+              case "expirationDate":
+                $("#donation-form-submit-button").addClass("validation-braintree-valid-date");
+                break;
+            }
+          } else {
+            switch(event.target.fieldKey) {
+              case "number":
+                $("#donation-form-submit-button").removeClass("validation-braintree-valid-number");
+                break;
+              case "cvv":
+                $("#donation-form-submit-button").removeClass("validation-braintree-valid-cvv");
+                break;
+              case "expirationDate":
+                $("#donation-form-submit-button").removeClass("validation-braintree-valid-date");
+                break;
+            }
+          }
+
+
+
           if(event.card) {
             $("#card-number").removeClass("card-image-visa card-image-diners-club card-image-discover card-image-jcb card-image-maestro card-image-master-card card-image-paypal card-image-american-express card-unionpay");
             switch (event.card.type) {
