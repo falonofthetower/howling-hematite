@@ -38,7 +38,9 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_invalid_card "100"
     click_button "Donate"
-    expect(page).to have_content("Credit card number is invalid.")
+    within_frame("braintree-hosted-field-number") do
+      expect(page).to have_css("input.number.invalid")
+    end
   end
 
   def fill_in_valid_giver
