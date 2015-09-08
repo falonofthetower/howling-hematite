@@ -13,7 +13,6 @@
     = f.number_field :amount, label: "Amount of donation ($ USD)", value: "25.00", step: 5.0
     = f.text_area :message, label: "Message (optional)", size: "38x2", placeholder: "If you'd like to include a message with your donation, you can write it here."
     = f.check_box :mailing_list, label: "Please add me to the mailing list"
-
     .form-group
       = label_tag 'Card number'
       #card-number
@@ -23,7 +22,7 @@
     .form-group
       = label_tag 'Expiration Date'
       #expiration-date
-    = f.submit "Donate With Credit Card", class: "btn btn-default"
+    = f.submit "Donate", class: "btn btn-default"
     %div.paypal-group<
       %p><
         OR
