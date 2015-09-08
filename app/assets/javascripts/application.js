@@ -14,4 +14,13 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require overlay
+//= require d3.min
+//= require jssor.slider.min
+//= require rrssb.min
+//= require slideshows
+//= require overlay
+//= require donations
+//= require graphs
+//= require payments
+//= require retractable
 //= require_tree .
