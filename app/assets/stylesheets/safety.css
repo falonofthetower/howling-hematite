@@ -176,7 +176,7 @@ main article.video {
   box-shadow:none;
 }
 
-main article.video iframe {
+main article.video iframe, main article.contains-video iframe {
   display: inline-block;
   box-shadow: 2px 2px 15px -2px grey;
   width:100%;
@@ -365,11 +365,19 @@ section.slideshow div.slideshow {
     position: static;
     margin: auto;
     z-index: 60;
-    
+
   }
 }
 
+/* Signiture */
 
+.no-bottom-margin {
+  margin-bottom :0;
+}
+.signiture {
+  position:relative;
+  top: -1em;
+}
 
 /* Alternate styles that break the donation box out to the side when the window is big enough. */
 
