@@ -177,7 +177,7 @@ function validateForm() {
     },*/
     messages: {
       "giver[address]": {
-        required: "We need your address for tax purposes"
+        required: "We need your address for potential tax deduction reporting purposes"
       },
       "giver[amount]": {
         required: "Please donate something!",
@@ -185,6 +185,19 @@ function validateForm() {
       },
       "giver[state]": {
         required: "The State field is required. Enter 'XX' if not in a State."
+      },
+      "giver[city]": {
+        required: "We need your address for tax purposes"
+      },
+      "giver[email]": {
+        required: "Your receipt will be sent to this email address",
+        email: "We need a valid email address so we can send your receipt"
+      },
+      "giver[first_name]": {
+        required: "We need a name for your receipt"
+      },
+      "giver[last_name]": {
+        required: "We need a name for your receipt"
       }
     }
   });
