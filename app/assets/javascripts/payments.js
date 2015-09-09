@@ -2,13 +2,9 @@ function braintree_setup() {
   braintree.setup(gon.client_token, "custom", {
     /*
     onPaymentMethodReceived: function (result) {
+      $("#payment-form").submit();
       $("div.overlay").removeClass("invisible");
       addProgressIndicator();
-      document.forms[0].submit();
-    },
-    */
-    /*onPaymentMethodReceived: function (result) {
-        console.log(result);
     },*/
     id: "payment-form",
     paypal: {
@@ -213,4 +209,20 @@ $(document).ready(function() {
   $("input.form-control").focusout(function () { updateValidation(this); });
   $("input.form-control").focusin(function () { updateValidation(this); });
 
+
+  $("#donation-form-submit-button").click(function(event) {
+    if((
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-number") &&
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-cvv") &&
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-date") &&
+      $("#donation-form-submit-button").hasClass("validation-basic-yes"))
+      || ($("#donation-form-submit-button").hasClass("validation-paypal") &&
+      $("#donation-form-submit-button").hasClass("validation-basic-yes"))) {
+       updateValidation(this);
+        $("div.overlay").removeClass("invisible");
+        addProgressIndicator();
+      } else {
+        updateValidation(this);
+    }
+  });
 });
