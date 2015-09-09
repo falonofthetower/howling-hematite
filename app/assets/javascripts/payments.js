@@ -125,6 +125,76 @@ function braintree_setup() {
     }
   });
 }
+
+function validateForm() {
+  $("#payment-form").validate({
+    onfocusout: function (element) {
+        this.element(element);
+    },
+    onkeyup: false,
+    rules: {
+      "giver[first_name]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[last_name]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[amount]": {
+        required: true,
+        min: 1.00,
+        number: true
+      },
+      "giver[zip]": {
+        required: true,
+        minlength: 3
+      },
+      "giver[state]": {
+        required: true,
+        minlength: 2
+      },
+      "giver[city]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[address]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[email]": {
+        required: true,
+        email: true,
+        minlength: 1
+      }
+    },
+    highlight: function (element) {
+      $(element).parent().addClass("validate-fail").removeClass("validate-valid");
+    },
+    unhighlight: function (element) {
+      $(element).parent().addClass("validate-valid").removeClass("validate-fail");
+    },
+    success: function(element) {
+
+    },
+    messages: {
+      "giver[amount]": {
+        required: "Please donate something!",
+        min: "Please donate at least enough to cover the cost of the transaction"
+      },
+      "giver[state]": {
+        required: "The State field is required. Enter 'XX' if not in a State."
+      }
+    }
+  });
+}
+
 $(document).ready(function() {
   braintree_setup();
+
+  // Validation
+  validateForm();
+  $("input.form-control").blur(function () {
+    $(this).validate();
+  });
 });

@@ -67,6 +67,10 @@ main article.donations section.donate-form fieldset {
   }
 }
 
+input.form-control:focus {
+  outline: 0;
+}
+
 main article.donations div.form-group {
   display: inline-block;
   margin:0;
@@ -82,7 +86,6 @@ main article.donations div.form-group {
   white-space: nowrap;
 
   border-radius: 3px;
-  z-index:4;
   overflow:visible;
 
   width: 100%;
@@ -142,6 +145,9 @@ main article.donations div.form-group:nth-of-type(13) { width:49.25%; display: i
 .braintree-hosted-fields-valid { box-shadow: inset 0px 0px 16px limegreen; }
 .braintree-hosted-fields-invalid { box-shadow: inset 0px 0px 16px tomato; }
 
+main article.donations div.form-group.validate-valid {box-shadow: inset 0px 0px 16px limegreen;}
+main article.donations div.form-group.validate-fail {box-shadow: inset 0px 0px 16px tomato;}
+
 main article.donations div.checkbox {
   width:100%;
   border: none;
@@ -183,6 +189,20 @@ main article.donations label {
     -ms-user-select: none;
     user-select: none;
   z-index:3;
+}
+
+label.error {
+  text-align: right;
+  bottom:0;
+  right:0;
+  position: relative;
+}
+div.form-group label#giver_state-error {
+  z-index: 45;
+  left: -120px;
+  bottom: -12px;
+  text-align:center;
+  position:absolute;
 }
 
 main article.donations input.form-control {
@@ -286,7 +306,7 @@ main article.donations input.btn {
   padding: 0.5em;
   padding-left: 2em;
   padding-right: 2em;
-  border-radius: 5px;
+  border-radius: 8px;
 }
 main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date, main article.donations input.btn.validation-paypal  {
   box-shadow: 4px 4px 7px -2px grey;
