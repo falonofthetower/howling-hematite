@@ -23,12 +23,16 @@ function unhide (header) {
     header.removeClass("collapsed");
 }
 
+function revealThankYou() {
+  unhide($("#thank-you"));
+}
+
 $(window).load(function() {
   $("article.retractable section h1").hover(
-    function() { 
+    function() {
       $(this).parent().parent().addClass("hovering"); },
-    function() { 
-      $(this).parent().parent().removeClass("hovering"); 
+    function() {
+      $(this).parent().parent().removeClass("hovering");
     });
   $("article.retractable h1").click(function() { toggleHidden($(this).parent().parent()); });
   toggleHidden($("#privacy-statement"));
@@ -39,6 +43,6 @@ $(window).load(function() {
   $("#reveal-disclaimer").click(function() { toggleHidden($("#disclaimer")); });
   toggleHidden($("#contact-us"));
   $("#reveal-contact-info").click(function() { toggleHidden($("#contact-us")); });
-  hide(".start-hidden");
+  hide($(".start-hidden"));
 
 });
