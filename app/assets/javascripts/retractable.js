@@ -26,6 +26,13 @@ function unhide (header) {
 function revealThankYou() {
   unhide($("#thank-you"));
 }
+function hideThanks() {
+  if((window.location.href.indexOf("thanks") != -1) || (/thanks/.test(self.location.href))) {
+    unhide($("#thank-you"));
+  } else {
+    hide($("#thank-you"));
+  }
+}
 
 $(window).load(function() {
   $("article.retractable section h1").hover(
@@ -44,5 +51,4 @@ $(window).load(function() {
   toggleHidden($("#contact-us"));
   $("#reveal-contact-info").click(function() { toggleHidden($("#contact-us")); });
   hide($(".start-hidden"));
-
 });
