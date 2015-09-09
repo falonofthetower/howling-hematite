@@ -16,8 +16,7 @@ feature "giver donates to cause", :js, :vcr do
 
   scenario "with valid amount and invalid giver data" do
     fill_in_valid_card "100"
-    click_button "Donate"
-    expect(page).to have_content("Please correct the errors")
+    expect(page).to have_content("We need a name")
   end
 
   scenario "with invalid amount and valid giver data" do
