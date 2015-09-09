@@ -2,14 +2,33 @@ function braintree_setup() {
   braintree.setup(gon.client_token, "custom", {
     /*
     onPaymentMethodReceived: function (result) {
+      $("#payment-form").submit();
       $("div.overlay").removeClass("invisible");
       addProgressIndicator();
-      document.forms[0].submit();
-    },
-    */
+    },*/
     id: "payment-form",
     paypal: {
-      container: "paypal-button"
+      container: "paypal-button",
+      onSuccess: function (nonce, email) {
+        console.log(nonce, email);
+        $("#donation-form-submit-button").prop("value","Donate with Paypal");
+        $("#donation-form-submit-button span").prop("Donate with Paypal");
+        $("#donation-form-submit-button").addClass("validation-paypal");
+        $("#donation-form-submit-button").addClass("no-top-margin");
+        $(".braintree-card").addClass("invisible-fields");
+        $("div.paypal-group p").addClass("invisible-fields");
+        $("div.paypal-group p").text("");
+      },
+      onCancelled: function () {
+        $("#donation-form-submit-button").prop("value","Donate with Credit Card");
+        $("#donation-form-submit-button span").prop("Donate with Credit Card");
+        $("#donation-form-submit-button").removeClass("validation-paypal");
+        $("#donation-form-submit-button").removeClass("no-top-margin");
+        $(".braintree-card").removeClass("invisible-fields");
+        $("div.paypal-group p").removeClass("invisible-fields");
+        $("div.paypal-group p").text("OR pay with");
+      },
+      enableBillingAddress: true
     },
     hostedFields: {
       number: {
@@ -102,6 +121,108 @@ function braintree_setup() {
     }
   });
 }
+
+function validateForm() {
+  $("#payment-form").validate({
+    onfocusout: function (element) {
+      this.element(element);
+    },
+    rules: {
+      "giver[first_name]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[last_name]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[amount]": {
+        required: true,
+        min: 1.00,
+        number: true
+      },
+      "giver[zip]": {
+        required: true,
+        minlength: 3
+      },
+      "giver[state]": {
+        required: true,
+        minlength: 2
+      },
+      "giver[city]": {
+        required: true,
+        minlength: 2
+      },
+      "giver[address]": {
+        required: true,
+        minlength: 1
+      },
+      "giver[email]": {
+        required: true,
+        email: true,
+        minlength: 2
+      }
+    },
+    highlight: function (element) {
+      $(element).parent().addClass("validate-fail").removeClass("validate-valid");
+    },
+    unhighlight: function (element) {
+      $(element).parent().addClass("validate-valid").removeClass("validate-fail");
+    },
+    /*success: function(element) {
+
+    },
+    submitHandler: function(form) {
+      $()
+    },*/
+    messages: {
+      "giver[address]": {
+        required: "We need your address for tax purposes"
+      },
+      "giver[amount]": {
+        required: "Please donate something!",
+        min: "Please donate at least enough to cover the cost of the transaction"
+      },
+      "giver[state]": {
+        required: "The State field is required. Enter 'XX' if not in a State."
+      }
+    }
+  });
+}
+
+function updateValidation(element) {
+    $(element).validate();
+    if($("#payment-form").valid()) {
+      $("#donation-form-submit-button").addClass("validation-basic-yes").attr('disabled', false);
+    } else {
+      $("#donation-form-submit-button").removeClass("validation-basic-yes").attr('disabled', true);
+    }
+}
+
 $(document).ready(function() {
   braintree_setup();
+
+  // Validation
+  validateForm();
+  $("input.form-control").blur(function () { updateValidation(this); });
+  $("input.form-control").keypress(function () { updateValidation(this); });
+  $("input.form-control").focusout(function () { updateValidation(this); });
+  $("input.form-control").focusin(function () { updateValidation(this); });
+
+
+  $("#donation-form-submit-button").click(function(event) {
+    if((
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-number") &&
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-cvv") &&
+      $("#donation-form-submit-button").hasClass("validation-braintree-valid-date") &&
+      $("#donation-form-submit-button").hasClass("validation-basic-yes"))
+      || ($("#donation-form-submit-button").hasClass("validation-paypal") &&
+      $("#donation-form-submit-button").hasClass("validation-basic-yes"))) {
+       updateValidation(this);
+        $("div.overlay").removeClass("invisible");
+        addProgressIndicator();
+      } else {
+        updateValidation(this);
+    }
+  });
 });
