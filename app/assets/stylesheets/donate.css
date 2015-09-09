@@ -259,7 +259,7 @@ main article.donations input.btn {
   margin-bottom: 0.5em;
 }
 
-main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date, main article.donations input.btn.validation-paypal {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes {
 /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a4b357+0,75890c+100;Olive+3D+%233 */
 background: #a4b357; /* Old browsers */
 /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -308,7 +308,7 @@ main article.donations input.btn {
   padding-right: 2em;
   border-radius: 8px;
 }
-main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date, main article.donations input.btn.validation-paypal  {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes  {
   box-shadow: 4px 4px 7px -2px grey;
   color: inherit;
 }
@@ -316,11 +316,11 @@ main article.donations input.btn.validation-braintree-valid-number.validation-br
 main article.donations input.btn:focus {
   outline:0;
 }
-main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date, main article.donations input.btn.validation-paypal :hover {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes:hover {
   color: white;
   box-shadow: inset 4px 4px 3px grey;
 }
-main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date, main article.donations input.btn.validation-paypal :active {
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes:active {
   color: white;
   text-shadow: 0px 0px 12px limegreen;
   box-shadow: inset 0px 0px 8px white;

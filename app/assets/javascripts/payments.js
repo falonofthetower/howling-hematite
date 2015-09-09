@@ -129,9 +129,8 @@ function braintree_setup() {
 function validateForm() {
   $("#payment-form").validate({
     onfocusout: function (element) {
-        this.element(element);
+      this.element(element);
     },
-    onkeyup: false,
     rules: {
       "giver[first_name]": {
         required: true,
@@ -156,7 +155,7 @@ function validateForm() {
       },
       "giver[city]": {
         required: true,
-        minlength: 1
+        minlength: 2
       },
       "giver[address]": {
         required: true,
@@ -165,7 +164,7 @@ function validateForm() {
       "giver[email]": {
         required: true,
         email: true,
-        minlength: 1
+        minlength: 2
       }
     },
     highlight: function (element) {
@@ -174,10 +173,16 @@ function validateForm() {
     unhighlight: function (element) {
       $(element).parent().addClass("validate-valid").removeClass("validate-fail");
     },
-    success: function(element) {
+    /*success: function(element) {
 
     },
+    submitHandler: function(form) {
+      $()
+    },*/
     messages: {
+      "giver[address]": {
+        required: "We need your address for tax purposes"
+      },
       "giver[amount]": {
         required: "Please donate something!",
         min: "Please donate at least enough to cover the cost of the transaction"
@@ -189,12 +194,23 @@ function validateForm() {
   });
 }
 
+function updateValidation(element) {
+    $(element).validate();
+    if($("#payment-form").valid()) {
+      $("#donation-form-submit-button").addClass("validation-basic-yes").attr('disabled', false);
+    } else {
+      $("#donation-form-submit-button").removeClass("validation-basic-yes").attr('disabled', true);
+    }
+}
+
 $(document).ready(function() {
   braintree_setup();
 
   // Validation
   validateForm();
-  $("input.form-control").blur(function () {
-    $(this).validate();
-  });
+  $("input.form-control").blur(function () { updateValidation(this); });
+  $("input.form-control").keypress(function () { updateValidation(this); });
+  $("input.form-control").focusout(function () { updateValidation(this); });
+  $("input.form-control").focusin(function () { updateValidation(this); });
+
 });
