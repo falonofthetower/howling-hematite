@@ -471,6 +471,7 @@ div.return:active { background-color: white; color:purple; }
 
   .do-not-print {
     visibility: hidden;
+    display:none;
   }
   .only-print {
     visibility: visible;
@@ -479,5 +480,6 @@ div.return:active { background-color: white; color:purple; }
 @media screen {
   .only-print {
     visibility: hidden;
+    display:none;
   }
 }
