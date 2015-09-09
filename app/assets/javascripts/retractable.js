@@ -42,6 +42,7 @@ $(window).load(function() {
       $(this).parent().parent().removeClass("hovering");
     });
   $("article.retractable h1").click(function() { toggleHidden($(this).parent().parent()); });
+  $("article.retractable.entire-retract").click(function() { toggleHidden($(this)); });
   toggleHidden($("#privacy-statement"));
   $("#reveal-privacy").click(function() { toggleHidden($("#privacy-statement")); });
   toggleHidden($("#terms-of-use"));
