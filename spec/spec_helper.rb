@@ -13,7 +13,14 @@ Sidekiq::Testing.inline!
 Capybara.server_port = 52662
 Capybara.javascript_driver = :poltergeist
 
-options = { js_errors: false }
+options = {
+  js_errors: false,
+  timeout: 180,
+  phantomjs_logger: StringIO.new,
+  logger: nil,
+  phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes']
+}
+
 Capybara.register_driver :poltergeist do |app|
   Capybara::Poltergeist::Driver.new(app, options)
 end
@@ -60,4 +67,12 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.before(:all) do
+    if self.respond_to? :visit
+      visit '/assets/application.css'
+      visit '/assets/application.js'
+    end
+  end
 end
+
