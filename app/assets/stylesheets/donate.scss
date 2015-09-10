@@ -1,0 +1,389 @@
+/* Donation Sidebar */
+
+main article.donations {
+	border: none;
+	display: block;
+	z-index: 10;
+  max-width: 320px;
+	position: static; /* must be static to disable scrolling on small screens */
+ 	padding:0em;
+  top:55px; /* used for moving it up and down the page when scrolling */
+}
+
+main article.donations {
+  min-width: 16em;
+  background-color: none;
+  background:none;
+  box-shadow: none;
+  z-index: 2;
+}
+
+main article.donations section {
+  background:#F7F5E7;
+  border: 2px orange solid;
+  border-radius: 8px;
+  margin-bottom: 1em;
+	padding:1em;
+  box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
+}
+main article.donations section p {
+  font-family: 'Signika', Verdana, sans-serif;
+  /*font-family: Corbel, ‘Lucida Grande’, ‘Lucida Sans Unicode’, ‘DejaVu Sans’, ‘Bitstream Vera Sans’, ‘Liberation Sans’, Verdana, ‘Verdana Ref’, sans-serif*/
+}
+
+main article.donations section h2 {
+  margin:0;
+  text-align:center;
+}
+
+main article.donations section.donate-form {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  background-color: #fff;
+  /*background:#F7F5E7;*/
+  border: 2px orange solid;
+  border-radius: 8px;
+  margin-left:auto;
+  left:auto;
+  text-align:center;
+
+  margin-bottom: 1em;
+  /*width:98%;*/
+  box-shadow: inset 0 0 7em -2em orange, 5px 5px 15px grey;
+  z-index:3;
+
+}
+
+main article.donations section.donate-form fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+@-moz-document url-prefix() {
+  main article.donations section.donate-form fieldset {
+    display:table-cell;
+  }
+}
+
+input.form-control:focus {
+  outline: 0;
+}
+
+main article.donations div.form-group {
+  display: inline-block;
+  margin:0;
+  padding:0;
+  background-color: #fff;
+  box-shadow: inset 0px 0px 18px #ddd;
+  border:1px solid #aaa;
+  box-sizing: border-box;
+  border-bottom: 0px;
+  text-align: center;
+  display:inline-block;
+  position:relative;
+  white-space: nowrap;
+
+  border-radius: 3px;
+  overflow:visible;
+
+  width: 100%;
+}
+main article.donations div.form-group:hover {
+  background-color:#ffffdd;
+}
+
+main article.donations div.form-group:nth-of-type(1) { width:50%; border-right:0; }
+main article.donations div.form-group:nth-of-type(2) { width:50%; }
+main article.donations div.form-group:nth-of-type(3) { width:100%; }
+main article.donations div.form-group:nth-of-type(4) { width:65%; border-right: 0;}
+main article.donations div.form-group:nth-of-type(5) { text-align:center; width:10%; border-right: 0;}
+main article.donations div.form-group:nth-of-type(5) input { text-align:center; text-transform:uppercase; }
+main article.donations div.form-group:nth-of-type(6) { text-align:center; width:25%;}
+main article.donations div.form-group:nth-of-type(6) input { text-align:center; }
+main article.donations div.form-group:nth-of-type(7) { width:100%; }
+main article.donations div.form-group:nth-of-type(9) {
+  width:100%;
+  border:0;
+  background-color: transparent;
+  box-shadow:none;
+}
+main article.donations div.form-group:nth-of-type(9) textarea {
+  margin-top: 1em;
+  max-width: 314px;
+}
+main article.donations div.form-group:nth-of-type(8) { width:100%; border-bottom:1px solid #aaa; }
+
+
+main article.donations div.form-group:nth-of-type(11) { width:100%; display: block;}
+main article.donations div.form-group:nth-of-type(12) { width:49.25%; display: inline-block;  border-bottom:1px solid #aaa; left:0px; position: relative;}
+main article.donations div.form-group:nth-of-type(13) { width:49.25%; display: inline-block; border-bottom:1px solid #aaa; right:0px; position: relative;}
+
+#card-number, #cvv-number, #expiration-date {
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.25;
+  padding-bottom:0em;
+}
+
+#card-number { height: 3em; text-align: center; background-size: 48px 32px; background-position: 95% 50%; background-repeat: no-repeat;}
+#cvv-number { height: 2.5em; text-align: center;}
+#expiration-date { height: 2.5em; text-align: center;}
+
+/* Credit card payment provider images */
+.card-image-visa { background: asset_url("layout/creditcards/visa.svg"); }
+.card-image-diners-club { background: asset_url("layout/creditcards/diners.svg); }
+.card-image-discover { background: asset_url("layout/creditcards/discover.svg"); }
+.card-image-jcb { background: asset_url("layout/creditcards/jcb.svg"); }
+.card-image-maestro { background: asset_url("layout/creditcards/maestro.svg"); }
+.card-image-master-card { background: asset_url("layout/creditcards/mastercard.svg"); }
+.card-image-paypal { background: asset_url("layout/creditcards/paypal.svg"); }
+.card-image-american-express {  }
+.card-image-unionpay {  }
+
+.braintree-hosted-fields-focused { box-shadow: inset 0px 0px 6px blue; }
+.braintree-hosted-fields-valid { box-shadow: inset 0px 0px 16px limegreen; }
+.braintree-hosted-fields-invalid { box-shadow: inset 0px 0px 16px tomato; }
+
+main article.donations div.form-group.validate-valid {box-shadow: inset 0px 0px 16px limegreen;}
+main article.donations div.form-group.validate-fail {box-shadow: inset 0px 0px 16px tomato;}
+
+main article.donations div.checkbox {
+  width:100%;
+  border: none;
+  background-color: transparent;
+  box-shadow:none;
+  margin-top: 0.15em;
+  margin-bottom:0.6em;
+}
+main article.donations div.checkbox label {
+  font-size: larger;
+  font-weight: normal;
+  color: #656565;
+  text-align:left;
+  padding:0.25em;
+  position:relative;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+
+  -webkit-touch-callout: text;
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+}
+
+main article.donations label {
+  font-size: x-small;
+  font-weight: bolder;
+  color: #656565;
+  text-align:left;
+  position: absolute;
+  left:0.25em;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  z-index:3;
+}
+
+label.error {
+  text-align: right;
+  bottom:0;
+  right:0;
+  position: relative;
+}
+div.form-group label#giver_state-error {
+  z-index: 45;
+  left: -120px;
+  bottom: -12px;
+  text-align:center;
+  position:absolute;
+}
+
+main article.donations input.form-control {
+  font-size: 12pt;
+  padding: 0.0em;
+  padding-top: 0.0em;
+  padding-bottom: 0.0em;
+  margin:0;
+  margin-left:auto;
+  margin-top:0.5em;
+  margin-bottom:0.5em;
+  left:auto;
+  height: 1.5em;
+  position: relative;
+  background-color: transparent;
+  border: 0;
+  /*border: 1px solid #aaa;
+  border-top: 0;
+  border-bottom: 0;*/
+  width:98%;
+  /*z-index:6;*/
+}
+
+main article.donations input.form-control#giver_amount {
+  text-align: right;
+}
+
+article.donations label {
+  /*border: 1px solid #aaa;
+  border-bottom: 0;
+  background-color: #fff;*/
+
+}
+
+.paypal-group {
+  vertical-align:top;
+  height: 44px;
+  margin-top: 0.5em;
+
+}
+.paypal-group p {
+  display: inline-block;
+  vertical-align: top;
+  margin:0;
+  line-height: 12pt;
+  padding-right:0.4em;
+  padding-top:0.3em;
+
+}
+#paypal-button { display: inline-block; }
+
+main article.donations input.btn {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#a4b357+0,75890c+100;Olive+3D+%233 */
+background: #a4b357; /* Old browsers */
+/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E0YjM1NyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3NTg5MGMiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+background: -moz-linear-gradient(top,  #a4b357 0%, #75890c 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a4b357), color-stop(100%,#75890c)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #a4b357 0%,#75890c 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #a4b357 0%,#75890c 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4b357', endColorstr='#75890c',GradientType=0 ); /* IE6-8 */
+}
+
+main article.donations input.btn {
+  background: #666;
+  color:#999;
+  box-shadow: inset 0px 0px 8px black;
+}
+main article.donations input.btn:hover {
+  background: #666;
+  color: red;
+  box-shadow: inset 0px 0px 8px black;
+}
+main article.donations input.btn:active {
+  background: #666;
+  color:red;
+  box-shadow: inset 0px 0px 8px red;
+}
+
+
+#braintree-paypal-button {
+  background-color: #2095D8;
+  border-radius: 7px;
+  box-shadow: 4px 4px 7px -2px grey;
+}
+#braintree-paypal-button:hover {
+  box-shadow: 0px 0px 7px 0px black;
+}
+#braintree-paypal-button:active {
+  box-shadow: 0px 0px 7px 02px white;
+}
+
+main article.donations input.btn {
+  padding: 0.5em;
+  padding-left: 2em;
+  padding-right: 2em;
+  border-radius: 8px;
+}
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes  {
+  box-shadow: 4px 4px 7px -2px grey;
+  color: inherit;
+}
+
+main article.donations input.btn:focus {
+  outline:0;
+}
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes:hover {
+  color: white;
+  box-shadow: inset 4px 4px 3px grey;
+}
+main article.donations input.btn.validation-braintree-valid-number.validation-braintree-valid-cvv.validation-braintree-valid-date.validation-basic-yes, main article.donations input.btn.validation-paypal.validation-basic-yes:active {
+  color: white;
+  text-shadow: 0px 0px 12px limegreen;
+  box-shadow: inset 0px 0px 8px white;
+}
+
+/* Validation and warnings */
+
+main article.donations .error {
+  color: maroon;
+}
+
+main article.donations .warning {
+  color: red;
+}
+
+main article.donations span.help-block {
+  color: red;
+  font-weight: bolder;
+  display:block;
+  position: relative;
+  z-index: 10;
+  background-color:pink;
+  padding:0.2em;
+  font-size:x-small;
+}
+
+main article.donations span.help-block:hover {
+  z-index: 20;
+  /*position: absolute;*/
+  background-color:peachpuff;
+}
+
+
+div.alert-danger {
+  font-weight: bolder;
+  font-size: larger;
+  text-align: center;
+  border: 1px black solid;
+  background-color: red;
+  margin:auto;
+
+}
+div.alert-danger a.close {
+  text-align: right;
+  right: 0;
+  position:relative;
+}
+
+main article.donations input.form-control.error, main article.donations div.has-error input.form-control {
+  border-color: red;
+  background-color: pink;
+}
+
+main article.donations div.form-group.invisible-fields,
+main article.donations div.form-group.invisible-fields label,
+main article.donations div.form-group.invisible-fields div,
+main article.donations div.form-group.invisible-fields iframe {
+  visibility: hidden;
+  overflow: hidden;
+  position:absolute;
+  height:0;
+  border:0;
+  margin:0;
+  padding:0;
+}
