@@ -15,7 +15,7 @@ Capybara.javascript_driver = :poltergeist
 
 options = {
   js_errors: false,
-  timeout: 180,
+  timeout: 18000,
   phantomjs_logger: StringIO.new,
   logger: nil,
   phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes']
