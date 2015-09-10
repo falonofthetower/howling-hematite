@@ -82,7 +82,7 @@ function braintree_setup() {
             }
           }
 
-
+/* Credit card provider processing */
 
           if(event.card) {
             $("#card-number").removeClass("card-image-visa card-image-diners-club card-image-discover card-image-jcb card-image-maestro card-image-master-card card-image-paypal card-image-american-express card-unionpay");
