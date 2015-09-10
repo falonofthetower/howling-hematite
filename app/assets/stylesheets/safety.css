@@ -257,16 +257,22 @@ div.return p {
 }
 
 /* Retractable */
-article.retractable {
+article.retractable.entire-retract {
   cursor: pointer;
 }
-article.retractable.collapsed {
+article.retractable.no-hide {
+  cursor: inherit;
+}
+article.retractable.collapsed, article.hideable.collapsed {
   padding-top:0.25em;
   padding-bottom:0.25em;
 }
 
-article.retractable:hover {
+article.retractable.hovering, article.retractable.entire-retract:hover {
   background-color: transparent;/* #262a76;*/
+}
+article.retractable.collapsed:hover {
+  background-color: #262a76;
 }
 
 article.retractable h1 {
@@ -336,7 +342,7 @@ section.slideshow div.slideshow {
   left: 0px;
   top: 0px;
   width: 100%;
-  min-width:100px;
+  min-width:334px;
   height:100%;
   /*min-height:250px;*/
  /* width: 128px;*/
@@ -373,6 +379,9 @@ section.slideshow div.slideshow {
 
 .no-bottom-margin {
   margin-bottom :0;
+}
+.no-top-margin {
+  margin-top :0;
 }
 .signiture {
   position:relative;
@@ -456,8 +465,21 @@ div.return:active { background-color: white; color:purple; }
 	  background-color: transparent;
   }
 
-main article.donations input.btn {
-  border: 1px solid;
-}
+  main article.donations input.btn {
+    border: 1px solid;
+  }
 
+  .do-not-print {
+    visibility: hidden;
+    display:none;
+  }
+  .only-print {
+    visibility: visible;
+  }
+}
+@media screen {
+  .only-print {
+    visibility: hidden;
+    display:none;
+  }
 }
