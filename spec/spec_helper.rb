@@ -60,11 +60,12 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
-end
 
-config.before(:all) do
-  if self.respond_to? :visit
-    visit '/assets/application.css'
-    visit '/assets/application.js'
+  config.before(:all) do
+    if self.respond_to? :visit
+      visit '/assets/application.css'
+      visit '/assets/application.js'
+    end
   end
 end
+
