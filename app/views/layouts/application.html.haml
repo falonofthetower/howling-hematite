@@ -10,7 +10,7 @@
     %meta{:property => "og:site_name", :content => "For Truck Safety" }
     %meta{:property => "og:url", :content => "http://fortrucksafety.com" }
     %meta{:property => "og:description", :content => "It is safer to run into a brick wall then the back of a truck. There are bars, called underride guards, at the back of the truck to stop cars from riding under the truck. But underride guards don't always stop cars from going under the truck. In 2013, our family found that out the hard way." }
-    %meta{:property => "og:image", :content => asset_path("content/underride_crash_scene.jpg")}
+    %meta{:property => "og:image", :content => asset_url("content/underride_crash_scene.jpg")}
     = csrf_meta_tags
     %meta{:content => "width=device-width", :name => "viewport"}/
     %link{:href => "https://fonts.googleapis.com/css?family=Signika:400,600", :rel => "stylesheet", :type => "text/css"}/
@@ -54,3 +54,7 @@
     %div.return#returntotop
       %p.no-select ⬆
     = javascript_include_tag 'rrssb.min.js'
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-49075308-2', 'auto');
+      ga('send', 'pageview');

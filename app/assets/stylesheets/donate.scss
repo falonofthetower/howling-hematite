@@ -131,13 +131,14 @@ main article.donations div.form-group:nth-of-type(13) { width:49.25%; display: i
 #cvv-number { height: 2.5em; text-align: center;}
 #expiration-date { height: 2.5em; text-align: center;}
 
-.card-image-visa { background: url(layout/creditcards/visa.svg); }
-.card-image-diners-club { background: url(layout/creditcards/diners.svg); }
-.card-image-discover { background: url(layout/creditcards/discover.svg); }
-.card-image-jcb { background: url(layout/creditcards/jcb.svg); }
-.card-image-maestro { background: url(layout/creditcards/maestro.svg); }
-.card-image-master-card { background: url(layout/creditcards/mastercard.svg); }
-.card-image-paypal { background: url(layout/creditcards/paypal.svg); }
+/* Credit card payment provider images */
+.card-image-visa { background: asset_url("layout/creditcards/visa.svg"); }
+.card-image-diners-club { background: asset_url("layout/creditcards/diners.svg"); }
+.card-image-discover { background: asset_url("layout/creditcards/discover.svg"); }
+.card-image-jcb { background: asset_url("layout/creditcards/jcb.svg"); }
+.card-image-maestro { background: asset_url("layout/creditcards/maestro.svg"); }
+.card-image-master-card { background: asset_url("layout/creditcards/mastercard.svg"); }
+.card-image-paypal { background: asset_url("layout/creditcards/paypal.svg"); }
 .card-image-american-express {  }
 .card-image-unionpay {  }
 
