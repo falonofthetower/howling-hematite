@@ -1,5 +1,5 @@
 class AppMailer < ActionMailer::Base
-  default from: "info@howling-hematite.herokuapp.com/"
+  default from: "noreply@fortrucksafety.com"
 
   def receipt(giver, donation)
     @giver = giver
