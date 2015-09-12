@@ -147,12 +147,12 @@ function validateForm() {
       },
       "giver[state]": {
         required: true,
-        minlength: 2
+        minlength: 2,
+        maxlength: 2
       },
       "giver[city]": {
         required: true,
-        minlength: 2,
-        maxlength: 2
+        minlength: 2
       },
       "giver[address]": {
         required: true,
