@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
@@ -86,12 +86,12 @@ Rails.application.configure do
     address: ENV["MAILGUN_SMTP_SERVER"],
     user_name: ENV["MAILGUN_SMTP_LOGIN"],
     password: ENV["MAILGUN_SMTP_PASSWORD"],
-    domain: "https://howling-hematite.herokuapp.com/",
+    domain: "//fortrucksafety.com",
     authentication: :plain,
   }
   ActionMailer::Base.delivery_method = :smtp
 
   config.action_mailer.default_url_options = {
-    host: "https://peter-myflix.herokuapp.com/"
+    host: "//fortrucksafety.com"
   }
 end
