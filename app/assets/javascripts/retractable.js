@@ -34,6 +34,12 @@ function hideThanks() {
   }
 }
 
+function unhideUrlTag(tagname) {
+  if((window.location.href.indexOf(tagname) != -1)) {
+    unhide($(tagname));
+  }
+}
+
 $(window).load(function() {
   $("article.retractable section h1").hover(
     function() {
@@ -52,4 +58,8 @@ $(window).load(function() {
   toggleHidden($("#contact-us"));
   $("#reveal-contact-info").click(function() { toggleHidden($("#contact-us")); });
   hide($(".start-hidden"));
+  unhideUrlTag("#privacy-statement");
+  unhideUrlTag("#disclaimer");
+  unhideUrlTag("#terms-of-use");
+  unhideUrlTag("#contact-us");
 });
