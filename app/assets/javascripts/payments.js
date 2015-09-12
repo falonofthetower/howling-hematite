@@ -151,7 +151,8 @@ function validateForm() {
       },
       "giver[city]": {
         required: true,
-        minlength: 2
+        minlength: 2,
+        maxlength: 2
       },
       "giver[address]": {
         required: true,
@@ -184,7 +185,8 @@ function validateForm() {
         min: "Please donate at least enough to cover the cost of the transaction"
       },
       "giver[state]": {
-        required: "The State field is required. Enter 'XX' if not in a State."
+        required: "The State field is required for USA addresses. Enter 'XX' if not in USA",
+        maxlength: "We only need the 2-letter State abbreviation for USA addresses"
       },
       "giver[city]": {
         required: "We need your address for tax purposes"
