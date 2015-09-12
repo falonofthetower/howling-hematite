@@ -206,14 +206,19 @@ main article.headline h2 {
 
 /* Chart and stats styles */
 
-section.donate-chart {
+main article.donations section.donate-chart {
   text-align: center;
   font-size: x-large;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+}
+section.donate-chart h2 {
+  line-height: 1.0em;
 }
 
 section.donate-chart p {
   font-size: x-large;
-  line-height: 1.4em;
+  line-height: 1.0em;
   margin-top:0;
   margin-bottom:0;
   margin-left:auto;
