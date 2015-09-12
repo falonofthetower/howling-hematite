@@ -47,4 +47,5 @@ end
 
 group :production, :staging do
   gem 'rails_12factor'
+  gem 'raygun4ruby'
 end
