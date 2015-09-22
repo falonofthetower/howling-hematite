@@ -1,0 +1,29 @@
+article.content-primary {
+
+}
+
+article.content-info {
+
+}
+
+article.nav-button {
+  cursor: pointer;
+  background-color: #262a76;
+  border-radius: 3em;
+}
+
+article.nav-button:hover {
+  background-color: transparent;
+  text-shadow: 0px 0px 5px #444;
+}
+
+article.nav-button:active {
+  background-color: orange;
+  text-shadow: 0px 0px 5px #444;
+  color: black;
+}
+
+a article.nav-button section, a.surpress-line {
+  text-decoration: none;
+  color: white;
+}
