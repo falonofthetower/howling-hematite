@@ -262,6 +262,9 @@ div.return p {
 }
 
 /* Retractable */
+article.retractable {
+  min-width: 368px;
+}
 article.retractable.entire-retract {
   cursor: pointer;
 }
@@ -281,6 +284,7 @@ article.retractable.collapsed:hover {
 }
 
 article.retractable h1 {
+  min-width: 368px;
   cursor: pointer;
   display:block;
 }
