@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( rrssb.min.js )
+Rails.application.config.assets.precompile += %w( rrssb.min.js admin.css)

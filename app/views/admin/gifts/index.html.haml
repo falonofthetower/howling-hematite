@@ -1,0 +1,19 @@
+.gifts
+  %table.gifts_table
+    %tr
+      %th Name
+      %th Email
+      %th Amount
+      %th Address
+      %th State
+      %th City
+      %th Zip
+    - @gifts.each do |gift|
+      %tr
+        %td= "#{gift.first_name} #{gift.last_name}"
+        %td= gift.email
+        %td= gift.amount
+        %td= gift.address
+        %td= gift.state
+        %td= gift.city
+        %td= gift.zip

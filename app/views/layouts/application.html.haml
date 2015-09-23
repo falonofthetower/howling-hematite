@@ -19,7 +19,8 @@
   %body
     %div.overlay.invisible
     %header.logo
-      =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png", :alt => "AnnaLeah and Mary for Truck Safety Logo"
+      %a#homepage{ href: "https://www.fortrucksafety.com", title: "For Truck Safety Homepage" }
+        = image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png", :alt => "AnnaLeah and Mary for Truck Safety Logo"
     %main.main{:role => "main"}
       :javascript
         scrollHandler();
@@ -37,6 +38,9 @@
             %span.donation-donors 000
             people
       = render "content"
+      = render "additional"
+      = render "navigation"
+      = render "disclaimers"
     %footer
       %p
         %a#reveal-disclaimer{ href: "#disclaimer", title: "Show Disclaimer" }
@@ -56,7 +60,7 @@
     :javascript
       displayDonations();
     %div.return#returntotop
-      %p.no-select ⬆
+      %p.no-select ^
     = javascript_include_tag 'rrssb.min.js'
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
