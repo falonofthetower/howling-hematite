@@ -39,7 +39,11 @@ function displayDonations() {
                                 .item(0)
                                 .textContent);
     
-
+    // TODO: Remove this once the backend admin interface 
+    // can add these to the  database
+    data_total += 245.00; // Additional, off-site donations
+    donorTotal += 4; // Additional, off-site donors
+    
     d3.selectAll(".donation-amount")
       .text("")
       .transition()
