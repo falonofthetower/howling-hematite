@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   get "ui(/:action)", controller: "ui"
 
+  get "/petition" => redirect("http://www.thepetitionsite.com/417/742/234/save-lives-not-dollars-urge-dot-to-adopt-vision-zero-policy/"), as: :petition
   namespace :admin do
     resources :gifts, only: [:index]
   end
