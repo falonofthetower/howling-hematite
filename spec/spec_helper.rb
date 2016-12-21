@@ -5,6 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda-matchers'
 require "vcr"
+require "capybara/rspec"
+require "capybara/rails"
 require "capybara/poltergeist"
 require "sidekiq/testing"
 
@@ -13,15 +15,11 @@ Sidekiq::Testing.inline!
 Capybara.server_port = 52662
 Capybara.javascript_driver = :poltergeist
 
-options = {
-  js_errors: false,
-  timeout: 18000,
-  phantomjs_logger: StringIO.new,
-  logger: nil,
-  phantomjs_options: ['--load-images=no', '--ignore-ssl-errors=yes']
-}
+options = { js_errors: false,
+            phantomjs_options: ['--ssl-protocol=any', '--ignore-ssl-errors=yes'],
+            inspector: false }
 
-Capybara.register_driver :poltergeist do |app|
+Capybara.register_driver :poltergeist do |app|<<<<<<< fudge_numbers
   Capybara::Poltergeist::Driver.new(app, options)
 end
 Capybara.default_wait_time = 60
