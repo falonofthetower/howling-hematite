@@ -8,20 +8,23 @@ feature "giver donates to cause", :js, :vcr do
   scenario "with valid amount and valid giver info" do
     fill_in_valid_giver
     fill_in_valid_card rand(100).to_s
+    wait_for_ajax
     click_button "Donate"
 
-    sleep(5)
+    wait_for_ajax
     expect(page).to have_content("Thank you")
   end
 
   scenario "with valid amount and invalid giver data" do
     fill_in_valid_card "100"
+    wait_for_ajax
     expect(page).to have_content("We need a name")
   end
 
   scenario "with invalid amount and valid giver data" do
     fill_in_valid_giver
     fill_in_valid_card "2001"
+    wait_for_ajax
     click_button "Donate"
     expect(page).to have_content("There was a problem")
   end
@@ -29,6 +32,7 @@ feature "giver donates to cause", :js, :vcr do
   scenario "with invalid amount and invalid giver data" do
     fill_in_valid_giver
     fill_in_valid_card "2000"
+    wait_for_ajax
     click_button "Donate"
     expect(page).to have_content("There was a problem")
   end
@@ -37,6 +41,7 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_invalid_card "100"
     click_button "Donate"
+    wait_for_ajax
     within_frame("braintree-hosted-field-number") do
       expect(page).to have_css("input.number.invalid")
     end
@@ -54,26 +59,32 @@ feature "giver donates to cause", :js, :vcr do
   end
 
   def fill_in_valid_card(amount)
+    wait_for_ajax
     fill_in "Amount", with: amount
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4111 1111 1111 1111"
     end
+    wait_for_ajax
     within_frame("braintree-hosted-field-cvv") do
       find(".cvv").set "123"
     end
+    wait_for_ajax
     within_frame("braintree-hosted-field-expirationDate") do
       fill_in "Expiration Date", with: "1220"
     end
   end
 
   def fill_in_invalid_card(amount)
+    wait_for_ajax
     fill_in "Amount", with: amount
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4739 3935 3953 9395"
     end
+    wait_for_ajax
     within_frame("braintree-hosted-field-cvv") do
       find(".cvv").set "123"
     end
+    wait_for_ajax
     within_frame("braintree-hosted-field-expirationDate") do
       fill_in "Expiration Date", with: "1220"
     end
