@@ -8,16 +8,13 @@ feature "giver donates to cause", :js, :vcr do
   scenario "with valid amount and valid giver info" do
     fill_in_valid_giver
     fill_in_valid_card rand(100).to_s
-    wait_for_ajax
     click_button "Donate"
 
-    wait_for_ajax
     expect(page).to have_content("Thank you")
   end
 
   scenario "with valid amount and invalid giver data" do
     fill_in_valid_card "100"
-    wait_for_ajax
     expect(page).to have_content("We need a name")
   end
 
@@ -57,6 +54,7 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_valid_card(amount)
     fill_in "Amount", with: amount
+    expect(page).to have_content("Please Help: Donate Here")
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4111 1111 1111 1111"
     end
