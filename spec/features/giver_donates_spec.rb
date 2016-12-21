@@ -10,6 +10,7 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_card rand(100).to_s
     click_button "Donate"
 
+    sleep(5)
     expect(page).to have_content("Thank you")
   end
 
@@ -54,16 +55,12 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_valid_card(amount)
     fill_in "Amount", with: amount
-
-    expect(page).to have_css('iframe[name="braintree-hosted-field-number"]')
-    page.driver.within_frame("braintree-hosted-field-number") do
+    within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4111 1111 1111 1111"
     end
-    expect(page).to have_css('iframe[name="braintree-hosted-field-cvv"]')
     within_frame("braintree-hosted-field-cvv") do
       find(".cvv").set "123"
     end
-    expect(page).to have_css('iframe[name="braintree-hosted-field-expirationDate"]')
     within_frame("braintree-hosted-field-expirationDate") do
       fill_in "Expiration Date", with: "1220"
     end
@@ -71,15 +68,12 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_invalid_card(amount)
     fill_in "Amount", with: amount
-    expect(page).to have_css('iframe[name="braintree-hosted-field-number"]')
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4739 3935 3953 9395"
     end
-    expect(page).to have_css('iframe[name="braintree-hosted-field-cvv"]')
     within_frame("braintree-hosted-field-cvv") do
       find(".cvv").set "123"
     end
-    expect(page).to have_css('iframe[name="braintree-hosted-field-expirationDate"]')
     within_frame("braintree-hosted-field-expirationDate") do
       fill_in "Expiration Date", with: "1220"
     end
