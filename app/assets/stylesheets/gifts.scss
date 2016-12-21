@@ -1,0 +1,24 @@
+.gifts {
+  .table {
+    display: block;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  table, th, td {
+    border: 1px solid black;
+    vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  th, td {
+    padding: 5px;
+    text-align: left;
+  }
+
+  body {
+    background: #b3d4fc;
+  }
+}

@@ -19,10 +19,10 @@ options = { js_errors: false,
             phantomjs_options: ['--ssl-protocol=any', '--ignore-ssl-errors=yes'],
             inspector: false }
 
-Capybara.register_driver :poltergeist do |app|
+Capybara.register_driver :poltergeist do |app|<<<<<<< fudge_numbers
   Capybara::Poltergeist::Driver.new(app, options)
 end
-Capybara.default_wait_time = 25
+Capybara.default_wait_time = 60
 
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
@@ -65,4 +65,12 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  config.before(:all) do
+    if self.respond_to? :visit
+      visit '/assets/application.css'
+      visit '/assets/application.js'
+    end
+  end
 end
+

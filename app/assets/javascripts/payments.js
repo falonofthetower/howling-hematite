@@ -1,16 +1,9 @@
 function braintree_setup() {
   braintree.setup(gon.client_token, "custom", {
-    /*
-    onPaymentMethodReceived: function (result) {
-      $("#payment-form").submit();
-      $("div.overlay").removeClass("invisible");
-      addProgressIndicator();
-    },*/
     id: "payment-form",
     paypal: {
       container: "paypal-button",
       onSuccess: function (nonce, email) {
-        console.log(nonce, email);
         $("#donation-form-submit-button").prop("value","Donate with Paypal");
         $("#donation-form-submit-button span").prop("Donate with Paypal");
         $("#donation-form-submit-button").addClass("validation-paypal");
@@ -82,7 +75,7 @@ function braintree_setup() {
             }
           }
 
-
+/* Credit card provider processing */
 
           if(event.card) {
             $("#card-number").removeClass("card-image-visa card-image-diners-club card-image-discover card-image-jcb card-image-maestro card-image-master-card card-image-paypal card-image-american-express card-unionpay");
@@ -147,7 +140,8 @@ function validateForm() {
       },
       "giver[state]": {
         required: true,
-        minlength: 2
+        minlength: 2,
+        maxlength: 2
       },
       "giver[city]": {
         required: true,
@@ -184,7 +178,8 @@ function validateForm() {
         min: "Please donate at least enough to cover the cost of the transaction"
       },
       "giver[state]": {
-        required: "The State field is required. Enter 'XX' if not in a State."
+        required: "The State field is required for USA addresses. Enter 'XX' if not in USA",
+        maxlength: "We only need the 2-letter State abbreviation for USA addresses"
       },
       "giver[city]": {
         required: "We need your address for tax purposes"

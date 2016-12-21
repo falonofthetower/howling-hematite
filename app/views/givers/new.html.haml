@@ -7,7 +7,7 @@
     = f.text_field :last_name, label: "Last Name", placeholder: "LastName"
     = f.text_field :address, label: "Street Address", placeholder: "123 Example Street", size: 44
     = f.text_field :city, label: "City", placeholder: "City Name", size: 28
-    = f.text_field :state, label: "State", size: 3, placeholder: "AA"
+    = f.text_field :state, label: "State", size: 3, maxlength: 2, placeholder: "AA"
     = f.text_field :zip, label: "Zip/Postal", size: 7, placeholder: "00000"
     = f.email_field :email, label: "Email Address", placeholder: "Your receipt will be sent here", size: 50
     = f.number_field :amount, label: "Amount of donation ($ USD)", value: "25.00", step: 5.0, min: 0

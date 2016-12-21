@@ -12,10 +12,5 @@
  *
  *= require_self
  *= require normalize
- *= require main
- *= require rrssb
- *= require safety
- *= require donate
- *= require pages
- *= require_tree .
+ *= require gifts
  */

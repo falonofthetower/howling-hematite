@@ -206,14 +206,19 @@ main article.headline h2 {
 
 /* Chart and stats styles */
 
-section.donate-chart {
+main article.donations section.donate-chart {
   text-align: center;
   font-size: x-large;
+  padding-top:0.5em;
+  padding-bottom:0.5em;
+}
+section.donate-chart h2 {
+  line-height: 1.0em;
 }
 
 section.donate-chart p {
   font-size: x-large;
-  line-height: 1.4em;
+  line-height: 1.0em;
   margin-top:0;
   margin-bottom:0;
   margin-left:auto;
@@ -257,7 +262,10 @@ div.return p {
 }
 
 /* Retractable */
-article.retractable h1 {
+article.retractable {
+  min-width: 368px;
+}
+article.retractable.entire-retract {
   cursor: pointer;
 }
 article.retractable.no-hide {
@@ -268,14 +276,15 @@ article.retractable.collapsed, article.hideable.collapsed {
   padding-bottom:0.25em;
 }
 
-article.retractable.hovering {
+article.retractable.hovering, article.retractable.entire-retract:hover {
   background-color: transparent;/* #262a76;*/
 }
-article.retractable.no-hide:hover {
+article.retractable.collapsed:hover {
   background-color: #262a76;
 }
 
 article.retractable h1 {
+  min-width: 368px;
   cursor: pointer;
   display:block;
 }
@@ -286,6 +295,11 @@ article.retractable h1:hover {
 article.retractable h1:active {
   color:#444;
   text-shadow: 0px 0px 5px #444;
+}
+
+article.retractable.start-hidden h1.noselect {
+  font-size: 16pt;
+  line-height: 1.1em;
 }
 
 /* Slideshows */

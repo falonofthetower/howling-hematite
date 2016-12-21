@@ -7,20 +7,30 @@ function toggleHidden(header) {
 }
 function hide(header) {
   if(typeof header === "object") {
-    header.children("section").addClass("hidden");
-      if(header.hasClass("all-hidden")) {
-         header.addClass("hidden");
+    header.addClass("collapsed");
+    header.children("section").hide();
+      if(header.hasClass("all-hidden") || header.hasClass("content-primary")) {
+         header.hide();
       }
-      header.addClass("collapsed");
+
   }
 }
 function unhide (header) {
   if(!(typeof header === "object")) { return; }
-  header.children("section").removeClass("hidden");
-    if(header.hasClass("all-hidden")) {
-       header.removeClass("hidden");
-    }
+  header.children("section").show();
     header.removeClass("collapsed");
+    if(header.hasClass("all-hidden") || header.hasClass("content-primary")) {
+       header.show();
+    }
+
+}
+
+function unhideUrlTag(tagname) {
+  if((window.location.href.indexOf(tagname) != -1)) {
+    unhide($(tagname));
+  } else {
+    hide($(tagname));
+  }
 }
 
 function revealThankYou() {
@@ -34,21 +44,89 @@ function hideThanks() {
   }
 }
 
+function hideLegal() {
+  toggleHidden($("#privacy-statement"));
+  toggleHidden($("#terms-of-use"));
+  toggleHidden($("#disclaimer"));
+  toggleHidden($("#contact-us"));
+  unhideUrlTag("#privacy-statement");
+  unhideUrlTag("#disclaimer");
+  unhideUrlTag("#terms-of-use");
+  unhideUrlTag("#contact-us");
+}
+
+function hideContentPrimary() {
+  hide($(".content-primary"));
+}
+
+function showContentPrimary() {
+  unhide($(".content-primary"));
+}
+
+function pageLoadHideInfo() {
+  hide($("#info"));
+  hide($("#conceal-info"));
+  hide($("#reveal-info"));
+  unhideUrlTag("#info");
+  if((window.location.href.indexOf("#info") != -1)) {
+    hide($("#reveal-info"));
+    unhide($("#conceal-info"));
+    hideContentPrimary();
+  } else {
+    unhide($("#reveal-info"));
+    hide($("#conceal-info"));
+    showContentPrimary();
+  }
+}
+
+function hideInfo() {
+  hide($("#info"));
+  unhide($("#reveal-info"));
+  hide($("#conceal-info"));
+  showContentPrimary();
+  console.log("hide info");
+  //location.href = "#";
+}
+
+function showInfo() {
+  unhide($("#info"));
+  unhide($("#conceal-info"));
+  hide($("#reveal-info"));
+  hideContentPrimary();
+  location.href = "#info";
+}
+
 $(window).load(function() {
-  $("article.retractable section h1").hover(
+
+
+  hide($(".start-hidden"));
+
+  $("article.retractable h1").hover(
     function() {
       $(this).parent().parent().addClass("hovering"); },
     function() {
       $(this).parent().parent().removeClass("hovering");
     });
-  $("article.retractable h1").click(function() { toggleHidden($(this).parent().parent()); });
-  toggleHidden($("#privacy-statement"));
+  $("article.retractable h1").click(function() { toggleHidden($(this).parent()); });
+  $("article.retractable section h1").click(function() { toggleHidden($(this).parent().parent()); });
+  $("article.retractable.entire-retract").click(function() { toggleHidden($(this)); });
+  $("article.retractable.entire-retract section h1").click(function() { toggleHidden($(this).parent().parent()); });
   $("#reveal-privacy").click(function() { toggleHidden($("#privacy-statement")); });
-  toggleHidden($("#terms-of-use"));
   $("#reveal-terms-of-use").click(function() { toggleHidden($("#terms-of-use")); });
-  toggleHidden($("#disclaimer"));
   $("#reveal-disclaimer").click(function() { toggleHidden($("#disclaimer")); });
-  toggleHidden($("#contact-us"));
   $("#reveal-contact-info").click(function() { toggleHidden($("#contact-us")); });
-  hide($(".start-hidden"));
+
+  $("#reveal-info").click(function() {
+    if(Modernizr.history) {
+      history.pushState(null, "", "#info");
+    }
+    showInfo();
+  });
+
+  $("#conceal-info").click(function() {
+    if(Modernizr.history) {
+      history.pushState(null, "", "/");
+    }
+    hideInfo();
+  });
 });

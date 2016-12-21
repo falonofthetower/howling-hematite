@@ -3,10 +3,17 @@ Rails.application.routes.draw do
   resources :givers, only: [:new, :create, :show, :index]
   resources :donations, only: [:index]
   resources :access_accounts, only: [:new, :create, :show]
-  get "/token_sessions/:token" => "token_sessions#create", as: :token_sessions
+  resources :sessions, only: [:new, :create]
+  get "/sign_in", to: "sessions#new"
+  post "sign_in", to: "sessions#create"
   get "/thanks" => "givers#thanks", as: :thanks
 
   get "ui(/:action)", controller: "ui"
+
+  get "/petition" => redirect("http://www.thepetitionsite.com/417/742/234/save-lives-not-dollars-urge-dot-to-adopt-vision-zero-policy/"), as: :petition
+  namespace :admin do
+    resources :gifts, only: [:index]
+  end
 end
 
 Donor::Application.routes.draw do
