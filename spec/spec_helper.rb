@@ -5,6 +5,8 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'shoulda-matchers'
 require "vcr"
+require "capybara/rspec"
+require "capybara/rails"
 require "capybara/poltergeist"
 require "sidekiq/testing"
 
