@@ -37,9 +37,10 @@ feature "giver donates to cause", :js, :vcr do
     fill_in_valid_giver
     fill_in_invalid_card "100"
     click_button "Donate"
-    within_frame("braintree-hosted-field-number") do
-      expect(page).to have_css("input.number.invalid")
-    end
+    require 'pry'; binding.pry;
+    # within_frame("braintree-hosted-field-number") do
+    #   expect(page).to have_css("input.number.invalid")
+    # end
   end
 
   def fill_in_valid_giver
@@ -55,6 +56,7 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_valid_card(amount)
     fill_in "Amount", with: amount
+    sleep 5
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4111 1111 1111 1111"
     end
@@ -68,6 +70,8 @@ feature "giver donates to cause", :js, :vcr do
 
   def fill_in_invalid_card(amount)
     fill_in "Amount", with: amount
+    sleep 5
+    require 'pry'; binding.pry;
     within_frame("braintree-hosted-field-number") do
       fill_in "Credit Card Number", with: "4739 3935 3953 9395"
     end

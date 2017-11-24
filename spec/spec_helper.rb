@@ -36,7 +36,7 @@ VCR.configure do |c|
   c.configure_rspec_metadata!
   c.allow_http_connections_when_no_cassette = true
   c.ignore_localhost = true
-  c.default_cassette_options = { record: :new_episodes }
+  c.default_cassette_options = { record: :all }
 end
 
 RSpec.configure do |config|
@@ -73,6 +73,13 @@ RSpec.configure do |config|
       visit '/assets/application.css'
       visit '/assets/application.js'
     end
+  end
+end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
   end
 end
 

@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.2.3'
 
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.2.5'
 gem 'haml-rails'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -21,12 +21,14 @@ gem 'braintree'
 gem 'gon'
 gem 'sidekiq'
 gem 'gibbon'
+gem 'rake', '< 11.0'
+
 
 
 group :development, :test do
   gem 'pry'
   gem 'pry-nav'
-  gem 'shoulda-matchers', require: false
+  gem 'shoulda-matchers' #, require: false
   gem 'rspec-rails', '2.99'
   gem 'capybara'
   gem 'guard-rspec', require: false
