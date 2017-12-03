@@ -17,6 +17,5 @@
  *= require safety
  *= require donate
  *= require pages
- *= require map
  *= require_tree .
  */
