@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Lat:
+  = @crash_location.lat
+%p
+  %b Lng:
+  = @crash_location.lng
+%p
+  %b Title:
+  = @crash_location.title
+%p
+  %b Content:
+  = @crash_location.content
+
+= link_to 'Edit', edit_admin_crash_location_path(@crash_location)
+\|
+= link_to 'Back', admin_crash_locations_path

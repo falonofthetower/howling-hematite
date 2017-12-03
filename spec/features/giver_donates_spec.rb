@@ -1,4 +1,4 @@
-require 'spec_helper'
+# require 'spec_helper'
 
 # feature "giver donates to cause", :js, :vcr do
 #   background do
@@ -37,7 +37,6 @@ require 'spec_helper'
 #     fill_in_valid_giver
 #     fill_in_invalid_card "100"
 #     click_button "Donate"
-#     require 'pry'; binding.pry;
 #     # within_frame("braintree-hosted-field-number") do
 #     #   expect(page).to have_css("input.number.invalid")
 #     # end
