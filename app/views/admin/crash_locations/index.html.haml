@@ -1,0 +1,73 @@
+:css
+  #map {
+    height: 400px;
+    width: 100%;
+  }
+
+%h1 Listing crash_locations
+#map
+
+%table
+  %thead
+    %tr
+      %th Id
+      %th Lat
+      %th Lng
+      %th Title
+      %th Content
+      %th
+      %th
+      %th
+
+  %tbody
+    - @crash_locations.each do |crash_location|
+      %tr
+        %td= crash_location.id
+        %td= crash_location.lat
+        %td= crash_location.lng
+        %td= crash_location.title
+        %td= crash_location.content
+        -# %td= link_to 'Show', crash_location
+        %td= link_to 'Edit', edit_admin_crash_location_path(crash_location)
+        -# %td= link_to 'Destroy', crash_location, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Crash location', new_admin_crash_location_path
+
+:javascript
+  function initMap() {
+    var uluru = {lat: -27.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 1,
+      center: uluru
+    });
+
+    var locations = [];
+
+    for (i = 0; i < gon.locations.length; i++) {
+      info = JSON.parse(gon.locations[i]);
+      locations[i] = [info["content"], info["lat"], info["lng"], info["title"]];
+    }
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        title: locations[i][3]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  }
+
+%script{:async => "", :defer => "defer", :src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyBigS8Kmcm2Y2qYvez_rGRa2LiGznZwt1g&callback=initMap"}
