@@ -1,0 +1,51 @@
+<style>
+   #map {
+    height: 400px;
+    width: 100%;
+   }
+</style>
+</head>
+<body>
+  <h3 class="title">Interactive Underride Crash Map</h3>
+  <p class="paragraph">
+    This map provides information on collisions between trucks and smaller passenger vehicles. The outcome of each crash, in terms of injuries and deaths, might have turned out differently if comprehensive and effective underride prevention technology had been installed on the truck. This is only a partial listing of all such crashes (hundreds of which happen each year); more crashes will be added as information is provided to the administrator. If you have additional information about these crashes, or information about truck crashes which you think might have involved underride, please send it to: <a href="mailto:underridecrashmap@email.com">underridecrashmap@gmail.com</a>
+  </p>
+<div id="map"></div>
+<script>
+  function initMap() {
+    var uluru = {lat: -27.363, lng: 131.044};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 1,
+      center: uluru
+    });
+
+    var locations = [];
+
+    for (i = 0; i < gon.locations.length; i++) {
+      info = JSON.parse(gon.locations[i]);
+      locations[i] = [info["content"], info["lat"], info["lng"], info["title"]];
+    }
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        title: locations[i][3]
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
+  }
+</script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBigS8Kmcm2Y2qYvez_rGRa2LiGznZwt1g&callback=initMap">
+</script>
