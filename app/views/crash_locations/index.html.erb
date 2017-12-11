@@ -1,16 +1,37 @@
-<style>
-   #map {
-    height: 400px;
-    width: 100%;
-   }
-</style>
 </head>
 <body>
+  <main>
   <h3 class="title">Interactive Underride Crash Map</h3>
-  <p class="paragraph">
-    This map provides information on collisions between trucks and smaller passenger vehicles. The outcome of each crash, in terms of injuries and deaths, might have turned out differently if comprehensive and effective underride prevention technology had been installed on the truck. This is only a partial listing of all such crashes (hundreds of which happen each year); more crashes will be added as information is provided to the administrator. If you have additional information about these crashes, or information about truck crashes which you think might have involved underride, please send it to: <a href="mailto:underridecrashmap@gmail.com">underridecrashmap@gmail.com</a>
-  </p>
-<div id="map"></div>
+    <div id="map"></div>
+    <p class="footnote">
+      If you have more information about these crashes, or information about an underride crash that is not on the map, please send it to: <a href="mailto:underridecrashmap@gmail.com">underridecrashmap@gmail.com</a>
+    </p>
+    </div>
+  </div>
+  </main>
+  <div class="container action-call">
+    <div class="row">
+      <div class="col-lg-4 text-center">
+        <div class="card">
+          <a href="http://annaleahmary.com/2017/11/i-am-a-truck-crash-survivor-mom-of-two-who-died-on-a-mission-to-make-truck-crashes-more-survivable/"><i class="fa fa-lightbulb-o fa-5x" aria-hidden="true"></i></a>
+          <h4>Hear the Stories</h4>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="card">
+          <a href="https://www.thepetitionsite.com/104/712/045/congress-act-now-to-end-deadly-truck-underride/"><i class="fa fa-pencil-square-o fa-5x" aria-hidden="true"></i></a>
+          <h4>Sign the Petition</h4>
+        </div>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="card">
+          <a href="https://stopunderrides.org/understanding-truck-underride/"><i class="fa fa-truck fa-5x" aria-hidden="true"></i></a>
+          <h4>Understand the Issue</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
 <script>
   function initMap() {
     var uluru = {lat: -27.363, lng: 131.044};
