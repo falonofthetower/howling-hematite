@@ -242,8 +242,11 @@ article.donations label {
   vertical-align:top;
   height: 44px;
   margin-top: 0.5em;
-
 }
+.paypal-group .invisible-fields {
+  padding:0;
+}
+
 .paypal-group p {
   display: inline-block;
   vertical-align: top;
@@ -254,6 +257,10 @@ article.donations label {
 
 }
 #paypal-button { display: inline-block; }
+
+.paypal-group div {
+  display: block;
+}
 
 main article.donations input.btn {
   margin-top: 0.5em;

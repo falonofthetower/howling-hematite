@@ -9,7 +9,7 @@
     %meta{:property => "og:title", :content => "Help Prevent Truck Underride Deaths" }
     %meta{:property => "og:site_name", :content => "For Truck Safety" }
     %meta{:property => "og:url", :content => "https://www.fortrucksafety.com" }
-    %meta{:property => "og:description", :content => "It is safer to run into a brick wall then the back of a truck. There are bars, called underride guards, at the back of the truck to stop cars from riding under the truck. But underride guards don't always stop cars from going under the truck. In 2013, our family found that out the hard way." }
+    %meta{:property => "og:description", :content => "It is safer to run into a brick wall than the back of a truck. There are bars, called underride guards, at the back of the truck to stop cars from riding under the truck. But underride guards don't always stop cars from going under the truck. In 2013, our family found that out the hard way." }
     %meta{:property => "og:image", :content => image_url("content/car_under_truck_800.jpg")}
     %meta{:property => "og:image", :content => "http://annaleahmary.com/files/car_under_truck_800.jpg"}
     %meta{:property => "og:image", :content => "http://annaleahmary.com/files/underride_research_saves_lives.jpg"}
@@ -19,7 +19,8 @@
   %body
     %div.overlay.invisible
     %header.logo
-      =image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png", :alt => "AnnaLeah and Mary for Truck Safety Logo"
+      %a#homepage{ href: "https://www.fortrucksafety.com", title: "For Truck Safety Homepage" }
+        = image_tag "layout/annaleah_and_mary_for_truck_safety_logo_web_midl.png", :alt => "AnnaLeah and Mary for Truck Safety Logo"
     %main.main{:role => "main"}
       :javascript
         scrollHandler();
@@ -35,9 +36,10 @@
           %p
             from
             %span.donation-donors 000
-            people
+            donations
       = render "content"
       = render "additional"
+      = render "navigation"
       = render "disclaimers"
     %footer
       %p
@@ -58,7 +60,7 @@
     :javascript
       displayDonations();
     %div.return#returntotop
-      %p.no-select ⬆
+      %p.no-select ^
     = javascript_include_tag 'rrssb.min.js'
     :javascript
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');

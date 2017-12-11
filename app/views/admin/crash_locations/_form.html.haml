@@ -1,0 +1,31 @@
+= form_for [:admin, @crash_location] do |f|
+  - if @crash_location.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@crash_location.errors.count, "error")} prohibited this crash_location from being saved:"
+      %ul
+        - @crash_location.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :lat
+    = f.text_field :lat
+  .field
+    = f.label :lng
+    = f.text_field :lng
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :date
+    = f.date_field :date
+  .field
+    = f.label :url_title
+    = f.text_area :url_title
+  .field
+    = f.label :url_address
+    = f.text_area :url_address
+  .actions
+    = f.submit 'Save'

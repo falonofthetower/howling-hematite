@@ -278,3 +278,7 @@ textarea {
         page-break-after: avoid;
     }
 }
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+/* Optional: Makes the sample page fill the window. */

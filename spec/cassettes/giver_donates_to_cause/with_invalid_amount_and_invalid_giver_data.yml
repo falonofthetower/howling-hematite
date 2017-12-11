@@ -536,4 +536,87 @@ http_interactions:
         //8AAAD//wMAPnsd5IQHAAA=
     http_version: 
   recorded_at: Sat, 05 Sep 2015 06:15:49 GMT
-recorded_with: VCR 2.9.3
+- request:
+    method: post
+    uri: https://api.sandbox.braintreegateway.com/merchants/svwhj9sfmh38gwmk/client_token
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8"?>
+        <client-token>
+          <version type="integer">2</version>
+        </client-token>
+    headers:
+      Accept-Encoding:
+      - gzip
+      Accept:
+      - application/xml
+      User-Agent:
+      - Braintree Ruby Gem 2.80.0
+      X-Apiversion:
+      - '4'
+      Authorization:
+      - Basic eGp5dnd5MjRjeGZ3dDk4ejoyYWQ4MTM4MmFkOGJiN2EwMDQ0N2E0NjM5OGNlYThiYg==
+      Content-Type:
+      - application/xml
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Fri, 24 Nov 2017 18:19:22 GMT
+      Content-Type:
+      - application/xml; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 201 Created
+      X-Authentication:
+      - server_to_server
+      Braintree-Service-Origin:
+      - clientauth
+      Vary:
+      - Accept-Encoding
+      Content-Encoding:
+      - gzip
+      Etag:
+      - W/"d9256edf496af83100dad0c6a411a622"
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      X-Request-Id:
+      - 786476a0-0ded-4652-b3b0-1eeaa8569c58
+      X-Runtime:
+      - '0.093317'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAKpiGFoAA8RVXXObOBR976/I5L1bPuxOmUnSieOAzYCoMSCkN4RIAEvg
+        xtiAfn0vTrZJp9mPmX3YVySde+45516uvg5SXJyKp0PVNteX+h/a5UXR5C2v
+        msfryziyP365/Hrz4SoXVdF0H7t2VzQ3Hy4urk6ZOBY3xegaNHVVhq3jum5H
+        784teRq2zHT3hbS16XsoxZEayZiv3D1rNlVQrQdiuDuk8jGIYt1f+gNR/jxw
+        iEmdWPOjR81XcY+UPyNqNyIZ66je9f5S1ESVAilb0MiVFNsVqvORRBud1Av5
+        4KARvmkUhw8k3Vh+fTugURv8rTYiezMEy3YIonb0q9nMj25nQQTYyn/yl7e9
+        bw/A4xZq6SKXqCV4rqWG2H1LkcGN8nuQIsnwowocbjLc5TyCNzXtOXYPGUYP
+        mZHMv6Xl9yKlZhGtNWKWkpubebBqK9CkZsZcZpgnueyhf7flq7DPVXvyDLvP
+        tnMF9XZEWjNPuiPB4shXrqCYl9xJTJLujsSwuqDeaP5odaB3nTk23PFPuUnN
+        zGnnuUG7bOnPqMm7bLRq5gjBmkmHxd4zyeAZ6MQk3VMzGUka7pkxO/MCnANz
+        kskfta73bC2h38rlcAbv6T6X1pHh5Mjv1p/XDSqZDCtmPj739FxjkTvif+lr
+        XfUVSZGiaaiS1D1A/qpsFWr5yv/sjVaZm0gA1pE0bpmBn7lMBDUgHykvi+0c
+        PNGqP/P63vvpu9dQwaR+8l57/0c8Ju1DARoT06+C5lDx37Ff+th0oE/JVgLm
+        BKl/WeMvtHEtqK1lk75xGFGMdHhrA5cK/N2Bt1reJALu9CQVPcHD35z1Z97U
+        ESp3hrKIgSOOJ3+diQ8Dj4gBMz2uD5AXyD/k415MOEeOh8OEk0thEIzmv+i6
+        nHKRzAjWe+bEZ+89c9FPPvIUiXxnN2f8Cc9ORjZlTpYaX91OmonCsTvgIzwJ
+        Wd5aGgN9odaUAfFf/H++h97JMGpBxydmJprXLMoiXZTs7ue7XZa6gpjh3Wv9
+        n/2XzBlOXDtzBy3DkeMYtIK+pBhhF3QU+ETSCiC7JuzKpzce/D530pJUDnsm
+        46muDufANxT0/nVXwXsJniq6hZl40+/GGPZTrS2e9q7bAVdtmrOX/KnzDEkB
+        OwD81N7ov0Lv5eN1Ru/tGvwDLqFLzxwp7N7kAFxqqN2ccWHXAN6RmMLNDWvJ
+        jFBMHiUJul83Gujxyv+Fn+INb7NaKCr11ldlww396ZwPwGH4y3TnRCWpHjbX
+        11efnv9BH64+/fp3+gEAAP//AwC39Zja1AYAAA==
+    http_version: 
+  recorded_at: Fri, 24 Nov 2017 18:19:22 GMT
+recorded_with: VCR 3.0.3

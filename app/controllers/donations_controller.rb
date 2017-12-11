@@ -1,6 +1,6 @@
 class DonationsController < ApplicationController
   def index
-    @total = Donation.total
-    @giver_count = Giver.unique_count
+    @total = Donation.current_campaign.total
+    @giver_count = Donation.current_campaign.count
   end
 end

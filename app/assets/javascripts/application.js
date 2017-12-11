@@ -23,4 +23,5 @@
 //= require graphs
 //= require payments
 //= require retractable
+//= require crash_locations
 //= require_tree .

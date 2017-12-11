@@ -3,8 +3,8 @@
     <h1 class="noselect">Contact Information</h1>
     <h2>http://www.fortrucksafety.com</h2>
     <h3>AnnaLeah and Mary For Truck Safety<br>
-    2800 Ridgecrest Dr.<br>
-    Rocky Mount, NC 27803</h3>
+      <%= t :address_1 %><br>
+      <%= t :address_2 %></h3>
     <h3>Contact Us</h3>
     <p>You may contact us at any time at: <a href="mailto:marianne@annahleahmary.com?subject=About%20ForTruckSafety.com">marianne@annahleahmary.com</a></p>
   </section>
@@ -14,10 +14,10 @@
     <h1 class="noselect">Disclaimer</h1>
     <h2>http://www.fortrucksafety.com</h2>
     <h2>AnnaLeah and Mary For Truck Safety</h2>
-    <h2>2800 Ridgecrest Dr.</h2>
-    <h2>Rocky Mount, NC 27803</h2>
+    <h2><%= t :address_1 %></h2>
+    <h2><%= t :address_2 %></h2>
 
-    <p>We are a 501(c)3 non-profit organization. We will not use money from this or any other fund-raising campaign for personal gain. However, we reserve the right to use the funds as we see fit to meet our general purpose of increasing awareness and funding research for truck safety. Therefore funds may be used for, but not limited to specific research projects, awareness campaigns, general overhead costs, mailings, travel and expenses, and for paying for services when donated services can not be obtained. If at any time the organization should hire personnel for any position, funds raised may also be used to pay that person a reasonable wage. If enough money is not raised to fund specific projects listed on this site or in other materials, other projects will be chosen that support the goals of increasing truck safety awareness and truck safety research.</p>
+    <p>We are registered with the state of North Carolina as a non-profit organization and have received verification from the IRS for our 501(c)3 status. You will receive a receipt via e-mail for your donations and may be eligible for a tax deduction.</p>
     <p>Last Updated: September 8, 2015</p>
   </section>
 </article>
@@ -26,8 +26,8 @@
     <h1 class="noselect">Privacy Policy</h1>
     <h2>http://www.fortrucksafety.com</h2>
     <h2>AnnaLeah and Mary for Truck Safety</h2>
-    <h2>2800 Ridgecrest Dr.</h2>
-    <h2>Rocky Mount, NC 27803</h2>
+    <h2><%= t :address_1 %></h2>
+    <h2><%= t :address_2 %></h2>
 
     <p>This privacy policy is for all information collected on fortrucksafety.com (“the site”, “our site”, or “site”) by <strong>AnnaLeah and Mary for Truck Safety</strong> (“us”, “we”, and “our”). This information pertains to anyone who comes onto our site (“users”) though most data collection occurs voluntarily by filling out portions of the website.</p>
 
@@ -55,8 +55,8 @@
     <h1 class="noselect">Terms of Use</h1>
     <h2>http://www.fortrucksafety.com</h2>
     <h2>AnnaLeah and Mary for Truck Safety</h2>
-    <h2>2800 Ridgecrest Dr.</h2>
-    <h2>Rocky Mount, NC 27803</h2>
+    <h2><%= t :address_1 %></h2>
+    <h2><%= t :address_2 %></h2>
 
     <p>These are the terms and conditions of use for <strong>fortrucksafety.com</strong> (from here on out referred to as “the site”,”site”, or “our site”) run by <strong>AnnaLeah and Mary for Truck Safety</strong> (from here on out referred to as “us”, “we”, and “our”. Please read these terms of use (from here on out referred to as “terms”) carefully. By using our site you are acknowledging that you will abide by the terms and conditions as well as all disclaimers found here in and will from here on out be referred to as “users”.</p>
     <p>If you do not agree with these terms of use, please discontinue use of our site.</p>
@@ -84,3 +84,6 @@
 
   </section>
 </article>
+<script>
+  hideLegal();
+</script>

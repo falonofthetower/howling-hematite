@@ -1,0 +1,44 @@
+body.map {
+  background-color: #F8FFF4;
+}
+main.map {
+  background-color: #474350;
+  color: #eaedf1;
+}
+
+.gm-style-iw {
+  color: black;
+}
+
+.title {
+  margin-left: 10px;
+  padding: 20px 0 20px 0;
+}
+
+.footnote {
+  padding: 30px 10px 60px 10px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+}
+
+.center {
+  display: block;
+  text-align: center;
+}
+
+.action-call div {
+  margin-top: -1rem;
+}
+
+.card {
+  -webkit-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: -2px 2px 5px 0px rgba(0,0,0,0.75);
+  background-color: #FCFFEB;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  margin: 0px 30px 100px 30px;
+}

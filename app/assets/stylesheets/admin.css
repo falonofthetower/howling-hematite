@@ -13,4 +13,6 @@
  *= require_self
  *= require normalize
  *= require gifts
+ *= require map
+ *= require font-awesome
  */
