@@ -17,5 +17,6 @@
  *= require safety
  *= require donate
  *= require pages
+ *= require font-awesome
  *= require_tree .
  */
