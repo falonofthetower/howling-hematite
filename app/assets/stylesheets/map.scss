@@ -1,14 +1,15 @@
-body {
+body.map {
   background-color: #F8FFF4;
 }
-main {
+main.map {
   background-color: #474350;
   color: #eaedf1;
 }
 
-main h3 {
-
+.gm-style-iw {
+  color: black;
 }
+
 .title {
   margin-left: 10px;
   padding: 20px 0 20px 0;
@@ -21,10 +22,6 @@ main h3 {
 #map {
   height: 400px;
   width: 100%;
-}
-
-p {
-  margin-left: 30px;
 }
 
 .center {
