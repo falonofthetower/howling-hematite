@@ -200,6 +200,7 @@ main article.headline h1 {
 }
 main article.headline h2 {
   font-size: 25pt;
+  line-height: 1.15em;
 }
 
 
