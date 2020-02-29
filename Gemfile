@@ -21,7 +21,7 @@ gem 'braintree'
 gem 'gon'
 gem 'sidekiq'
 gem 'gibbon'
-gem 'rake', '< 11.0'
+gem 'rake', '< 13.0'
 gem "font-awesome-rails"
 
 group :development, :test do
